@@ -1,0 +1,12 @@
+image: atlassian/default-image:2.13
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Production Build
+          deployment: main
+          script:
+            - zip -r hiso.zip *
+          artifacts:
+            - hiso.zip
