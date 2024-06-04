@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HISO - Health Insurance Second Opinion</title>
+  <base href="/">
+  <!-- <base href="health-insurance-second-opinion/"> -->
+  <link rel="icon" href="https://www.bajajcapital.com/assets/images/logo-xs.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/header.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/media.css" />
+  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" href="https://www.bajajcapital.com/assets/style/css/css2.css"> -->
+  <link rel="stylesheet" href="assets/css/css2.css">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,0" />
+
+
+  <!-- <Start webengage> -->
+
+  <script id='_webengage_script_tag' type='text/javascript'>
+    var webengage; !function (w, e, b, n, g) {
+      function o(e, t) {
+        e[t[t.length - 1]] = function () {
+          r.__queue.push([t.join("."),
+            arguments])
+        }
+      } var i, s, r = w[b], z = " ", l = "init options track screen onReady".split(z), a = "webPersonalization feedback survey notification notificationInbox".split(z), c = "options render clear abort".split(z), p = "Prepare Render Open Close Submit Complete View Click".split(z), u = "identify login logout setAttribute".split(z); if (!r || !r.__v) { for (w[b] = r = { __queue: [], __v: "6.0", user: {} }, i = 0; i < l.length; i++)o(r, [l[i]]); for (i = 0; i < a.length; i++) { for (r[a[i]] = {}, s = 0; s < c.length; s++)o(r[a[i]], [a[i], c[s]]); for (s = 0; s < p.length; s++)o(r[a[i]], [a[i], "on" + p[s]]) } for (i = 0; i < u.length; i++)o(r.user, ["user", u[i]]); setTimeout(function () { var f = e.createElement("script"), d = e.getElementById("_webengage_script_tag"); f.type = "text/javascript", f.async = !0, f.src = ("https:" == e.location.protocol ? "https://widgets.in.webengage.com" : "http://widgets.in.webengage.com") + "/js/webengage-min-v-6.0.js", d.parentNode.insertBefore(f, d) }) }
+    }(window, document, "webengage"); webengage.init("in~aa131708");
+  </script>
+
+  <!-- <End webengage> -->
+
+</head>
+
+<body id="top" class="dark">
+  <app-root></app-root>
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
+  <!-- <script src="./assets/js/app.js"></script> -->
+  <!-- <script>
+    $(document).ready(function () {
+
+      setTimeout(() => {
+
+        // alert('hii')
+        var boxes = $('#locations .location_box');
+        var previousId = null;
+        var intervalId;
+
+        function randomHideShow() {
+          var randomBox = boxes.eq(Math.floor(Math.random() * boxes.length));
+          var randomId = randomBox.attr('id');
+
+          // Ensure the newly generated ID is different from the previous one
+          while (randomId === previousId) {
+            randomBox = boxes.eq(Math.floor(Math.random() * boxes.length));
+            randomId = randomBox.attr('id');
+          }
+
+          // Update the previousId with the current one
+          previousId = randomId;
+
+          // Toggle the 'active' class
+          $(randomBox).toggleClass('active').siblings().removeClass('active');
+
+          console.log(randomId);
+        }
+
+        function startInterval() {
+          intervalId = setInterval(randomHideShow, 5000);
+        }
+
+        function stopInterval() {
+          clearInterval(intervalId);
+        }
+
+        boxes.mouseenter(function () {
+          stopInterval();
+          $(this).addClass('active').siblings().removeClass('active');
+        });
+
+        boxes.mouseleave(function () {
+          startInterval();
+        });
+
+        startInterval();
+
+      }, 1000)
+
+
+
+    });
+  </script> -->
+
+</body>
+
+</html>

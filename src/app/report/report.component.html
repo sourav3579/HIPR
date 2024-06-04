@@ -1,0 +1,371 @@
+<!-- header section -->
+<header class="header-container-wrapper">
+    <div class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6 logo">
+                    <a href="index.html">
+                        <img src="./assets/images/logo.png" alt="BCL" width="210">
+                    </a>
+                </div>
+                <div class="col-md-9 col-6 text-right">
+                    <div class="container">
+                        <div class="row align-items-center mob_hide">
+                            <div class="col-md-8">
+                                <div class="root">
+                                    <div class="order-track">
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <!-- <span class="order-track-status-line"></span> -->
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat"> Basic <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <span class="order-track-status-dot"></span>
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Lifestyle <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <span class="order-track-status-dot"></span>
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Confirm <span class="deskhide">your
+                                                        Details</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <div class="complete">
+                                    <p class="heading">25% Completed </p>
+                                    <div class="progressbar">
+                                        <div class="statusBar" style="width: 25%;"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header section  -->
+
+
+
+<!-- main section  -->
+<main>
+    <section class="dashboard">
+        <div class="sidemenu">
+            <div class="tab">
+                <div class="root">
+                    <div class="order-track">
+                        <div class="order-track-step active">
+                            <div class="order-track-text">
+                                <p class="order-track-text-stat"> Basic <span class="deskhide">Details</span></p>
+                            </div>
+                        </div>
+                        <div class="order-track-step active">
+                            <div class="order-track-status">
+                                <!-- <span class="order-track-status-dot"></span> -->
+                                <span class="order-track-status-line"></span>
+                            </div>
+                            <div class="order-track-text">
+                                <p class="order-track-text-stat">Lifestyle <span class="deskhide">Details</span></p>
+                            </div>
+                        </div>
+                        <div class="order-track-step active">
+                            <div class="order-track-status">
+                                <!-- <span class="order-track-status-dot"></span> -->
+                                <span class="order-track-status-line"></span>
+                            </div>
+                            <div class="order-track-text">
+                                <p class="order-track-text-stat">Review <span class="deskhide">your Details</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="otp_img d-none">
+                <div class="otp_img_wrapper" *ngIf="otpimg1">
+                    <img src="./assets/images/OTP-1.png" class="img-fluid" id="otp_img">
+                </div>
+                <div class="otp_img_wrapper" *ngIf="otpimg2">
+                    <img src="../../assets/images/OTP-2.png" class="img-fluid" id="otp_img">
+                </div>
+            </div>
+        </div>
+        <div class="workspace">
+            <div class="workspace-container-wrapper">
+                <!-- <div class="report">
+                        <div class="content">
+                            <p class="title">Your Report is Ready!</p>
+                            <p class="subtitle">Verify your details to download the report</p>
+                        </div>
+                    </div> -->
+                <!-- Swiper -->
+                <form #leadForm="ngForm" autocomplete="off">
+                    <div class="swiper phase-2 mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" *ngIf="mobile1">
+                                <div class="bottomimg">
+                                    <h3 class="verify-heading">Hi {{UserDetail?.name}}, Here's our Second
+                                        Opinion on your Health Coverage needs</h3>
+                                    <div class="lock">
+                                        <img src="./assets/images/verify_mascot.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                        <img src="./assets/images/verify_mascot_mob.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                    </div>
+
+                                    <div class="lock darklock">
+                                        <img src="./assets/images/dark-mode/verify_mascot.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                        <img src="./assets/images/dark-mode/verify_mascot_mob.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                    </div>
+
+                                    <!-- <div class="lock">
+                                        <img src="./assets/images/verify_mascot2.png" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                        <img src="./assets/images/verify_mascot2_mob.png" width="124"
+                                            class="img-fluid lockgif mt-4 pt-4" alt="lock">
+                                    </div> -->
+                                </div>
+                                <div class="row darkrow">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="mobile">Mobile Number</label>
+                                            <!-- <input type="tel" class="form-control" id="mobile"
+                                                    placeholder="+91 9999-999-999"> -->
+                                            <input type="tel" class="form-control" id="mobile"
+                                                placeholder="Enter your Mobile Number" [(ngModel)]="mobile"
+                                                name="mobile" (blur)="removeErrorMsg('mobile')" minlength="10"
+                                                maxlength="10" (keypress)="numbersOnly($event)"
+                                                (keydown)="onKeyDown($event)">
+                                            <small class="danger" *ngIf="mobileValidateMessage == 'lengthError'">
+                                                Please enter a valid mobile number
+                                            </small>
+                                            <small class="danger" *ngIf="mobileValidateMessage == 'invalid'">
+                                                Please enter a valid mobile number
+                                            </small>
+                                            <small class="danger" *ngIf="mobileValidateMessage == 'required'">
+                                                Please enter your mobile number
+                                            </small>
+                                        </div>
+                                        <!-- <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">I agree to the <a
+                                                        href="#" class="link">Terms &
+                                                        Condition</a></label>
+                                            </div> -->
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                                (click)="enableButton()" checked>
+                                            <label class="form-check-label" for="exampleCheck1">I agree to the <a
+                                                    href="https://www.bajajcapitalinsurance.com/TermsConditions.aspx"
+                                                    target="_blank" class="link">Terms & Conditions</a></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" *ngIf="mobile2">
+                                <div class="bottomimg">
+                                    <h3 class="verify-heading">Hi {{UserDetail?.name}}, Here's our Second
+                                        Opinion on your Health Coverage needs</h3>
+                                    <!-- <img src="./assets/images/Web.png" class="img-fluid web" alt="web">
+                                    <img src="./assets/images/Mobile.png" class="img-fluid mobile" alt="mobile"> -->
+                                    <div class="lock">
+                                        <img src="./assets/images/verify_mascot.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                        <img src="./assets/images/verify_mascot_mob.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                    </div>
+
+                                    <div class="lock darklock">
+                                        <img src="./assets/images/dark-mode/verify_mascot.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                        <img src="./assets/images/dark-mode/verify_mascot_mob.webp" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                    </div>
+
+                                </div>
+
+                                <div class="row darkrow">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="mobile">Mobile Number</label>
+                                            <input #mobileInput type="tel" class="form-control" id="mobile"
+                                                placeholder="Enter your Mobile Number" [(ngModel)]="mobile"
+                                                name="mobile" (blur)="removeErrorMsg('mobile')" minlength="10"
+                                                maxlength="10" (keypress)="numbersOnly($event)"
+                                                (keydown)="onKeyDown($event)" readonly="readonly">
+                                            <small class="error" *ngIf="mobileValidateMessage == 'lengthError'">
+                                                Please enter a valid mobile number
+                                            </small>
+                                            <small class="error" *ngIf="mobileValidateMessage == 'invalid'">
+                                                Please enter a valid mobile number
+                                            </small>
+                                            <small class="error" *ngIf="mobileValidateMessage == 'required'">
+                                                Please enter your mobile number
+                                            </small>
+                                            <a id="editbtn" class="btn editbtn" (click)="focusMobileInput()"><span
+                                                    class="material-icons-outlined">
+                                                    mode_edit
+                                                </span>&nbsp;&nbsp;Edit Number</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="mobile">Enter OTP</label>
+                                            <input type="tel" class="form-control" id="otp" name="otp"
+                                                placeholder="Enter 6-digit OTP here" minlength="6" maxlength="6"
+                                                [(ngModel)]="otp" (blur)="removeErrorMsg('otp')" (input)="VerifyOTP2()"
+                                                [readonly]="otpVerified" (keypress)="numbersOnlyott($event)">
+                                            <div class="danger" *ngIf="otpValidateMessage == 'required'">
+                                                Please enter your OTP
+                                            </div>
+                                            <div class="errormsg" *ngIf="otpValidateMessage == 'lengthError'">Invalid
+                                                OTP
+                                            </div>
+                                            <div class="errormsg" *ngIf='!otpVerifiedStatus2'>Invalid OTP
+                                            </div>
+                                            <div class="text-success">
+                                                {{otpVerify2}}
+                                            </div>
+                                            <!-- <a id="editbtn" class="btn editbtn" (click)="focusMobileInput()"><span
+                                                    class="material-icons-outlined">
+                                                    mode_edit
+                                                </span>&nbsp;&nbsp;Edit Number</a> -->
+                                            <!-- <div class="resend">
+                                                    <span class="didnt">Didn’t receive OTP?</span>
+                                                    <button class="btn resendbtn">Resend</button>
+                                                </div> -->
+
+                                            <div class="otpdiv">
+                                                <!-- <a class="btn resendBtn">Resend</a> -->
+                                                <div id="timer2">
+                                                    <span class="timer" *ngIf="isTimer2">Didn't
+                                                        recieve OTP? Resend in
+                                                        <strong style="font-size:17px;">{{timeleft2}}
+                                                        </strong>seconds</span>
+                                                    <a *ngIf="isResend2" id="resend" class="resendeotp"
+                                                        href="javascript:void(0)" (click)="resendOTP2()">Resend OTP</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-slide" *ngIf="mobile3">
+                                <div class="bottomimg">
+                                    <h3 class="verify-heading">Hi {{UserDetail?.name}}, Here's our Second
+                                        Opinion on your Health Coverage needs</h3>
+                                    <!-- <img src="./assets/images/Web.png" class="img-fluid web" alt="web">
+                                    <img src="./assets/images/Mobile.png" class="img-fluid mobile" alt="mobile"> -->
+                                    <div class="lock">
+                                        <img src="./assets/images/verify_mascot2.png" width="124"
+                                            class="img-fluid lockgif" alt="lock">
+                                        <img src="./assets/images/verify_mascot2_mob.png" width="124"
+                                            class="img-fluid lockgif mt-4 pt-4" alt="lock">
+                                    </div>
+
+                                    <div class="lock darklock">
+                                        <img src="./assets/images/dark-mode/verify_mascot2.png" width="124"
+                                            class="img-fluid lockgif" style="width: 28%;" alt="lock">
+                                        <img src="./assets/images/dark-mode/verify_mascot2_mob.png" width="124"
+                                            class="img-fluid lockgif mt-4 pt-4" alt="lock">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="mobile">Are you assisted by a Relationship Manager?
+                                                <span class="optional">(Optional)</span></label>
+                                            <div class="rm-box">
+                                                <button class="btn" [class.active]="isAssisted==true"
+                                                    (click)="toggleAssistance(true)">Yes</button>
+                                                <button class="btn" [class.active]="isAssisted==false"
+                                                    (click)="toggleAssistance(false);tooglevalue()">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" *ngIf="isAssisted">
+                                        <div class="form-group">
+                                            <label for="mobile">Enter RM Code</label>
+                                            <input type="tel" class="form-control" id="mobile" id="rmcode" name="rmcode"
+                                                placeholder="Enter RM's Business code" maxlength="6" minlength="5"
+                                                [(ngModel)]="rmcode" (blur)="removeErrorMsg('rmcode')"
+                                                (keypress)="numbersOnlyott($event)">
+                                            <div class="danger" *ngIf="rmcodeValidateMessage == 'required'">
+                                                Please enter your RM's business code
+                                            </div>
+                                            <div class="danger" *ngIf="rmcodeValidateMessage == 'lengthError'">
+                                                Invalid RMcode
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- NEW HTML ADDED 09-03-24 -->
+                            <!-- <div class="swiper-slide" *ngIf="cookingSlide">
+                                <div class="loader">
+                                    <div class="content">
+                                        <h3 class="title">Creating your Report</h3>
+                                    </div>
+                                    <img src="./assets/images/report-pdf.gif" class="img-fluid loadergif2" alt="loader">
+                                </div>
+                            </div> -->
+                            <!-- NEW HTML ADDED 09-03-24 -->
+
+                            <div class="swiper-slide" *ngIf="cookingSlide">
+                                <div class="loader">
+                                    <div class="content">
+                                        <h3 class="title">Your Report is Ready ✅</h3>
+                                        <p class="text">and here are our recommendations.</p>
+                                    </div>
+                                    <img src="./assets/images/loader.png" class="img-fluid loadergif" alt="loader">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div >
+                            <button (click)="checkValidationMsgStep1(leadForm)" >Continue</button>
+                        </div> -->
+                    <div class="next_btn" *ngIf="continuebtn">
+                        <button class="btn" (click)="checkValidationMsgStep1(leadForm)"
+                            *ngIf="isChecked">Continue</button>
+                    </div>
+                </form>
+
+                <div class="error d-none">
+                    <p class="text">Please select any option to proceed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- <div class="awesome" id="awesome">
+    <img src="./assets/images/tiger2.png" class="img-fluid success" alt="awesome">
+</div> -->

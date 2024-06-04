@@ -1,0 +1,102 @@
+/* toggle button  */
+.dark-toggle {
+    background: #1E1E1E;
+    box-shadow: inset 0px -0.531498px 2.12599px #FA3946, inset 0px 1.063px 2.12599px #1C75BC;
+    border-radius: 55px;
+    width: fit-content;
+    margin: auto;
+    position: fixed;
+    left: auto;
+    right: 15px;
+    top: 50px;
+    z-index: 999;
+    transform: rotate(90deg);
+}
+
+.dark-toggle input[type=checkbox]:checked+label::before {
+    display: none;
+}
+
+.dark-toggle input[type=checkbox]:checked+label::after {
+    display: none;
+}
+
+.dark-toggle .checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.dark-toggle .checkbox-label {
+    /* background-color: #111; */
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #EAEAEA;
+    box-shadow: inset 0px -0.531498px 2.12599px #FA3946, inset 0px 1.063px 2.12599px #1C75BC;
+    margin-bottom: 0px;
+}
+
+.dark-toggle .moon {
+    position: absolute;
+    top: 5px;
+    left: auto;
+    right: 4px;
+    background: url('../assets/images/moon.svg') no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 17px;
+    z-index: 9;
+    transform: rotate(-90deg);
+}
+
+.dark-toggle .sun {
+    position: absolute;
+    top: 8px;
+    left: 9px;
+    right: 5px;
+    background: url('../assets/images/sun.svg') no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 15px;
+    z-index: 9;
+}
+
+.dark-toggle .checkbox-label .ball {
+    background-color: #C7C7C7;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+
+/* toggle button  */
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+    .dark-toggle {
+        right: 0px;
+        top: 7rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .dark-toggle {
+        right: 0px;
+        top: 7rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dark-toggle {
+        right: 0px;
+        top: 7rem;
+    }
+}

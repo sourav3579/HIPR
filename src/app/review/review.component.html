@@ -1,0 +1,298 @@
+<!-- <header class="header-container-wrapper">
+    <div class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6 logo">
+                    <a href="index.html">
+                        <img src="./assets/images/logo.png" alt="BCL" width="210">
+                    </a>
+                </div>
+                <div class="col-md-9 col-6 text-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header> -->
+
+
+<!-- header section -->
+<header class="header-container-wrapper">
+    <div class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6 logo">
+                    <a href="index.html">
+                        <img src="./assets/images/logo.png" alt="BCL" width="210">
+                    </a>
+                </div>
+                <div class="col-md-9 col-6 text-right">
+                    <div class="container">
+                        <div class="row align-items-center mob_hide">
+                            <div class="col-md-8">
+                                <div class="root">
+                                    <div class="order-track">
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <!-- <span class="order-track-status-line"></span> -->
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat"> Basic <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Lifestyle <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Confirm <span class="deskhide">your
+                                                        Details</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <div class="complete">
+                                    <p class="heading">25% Completed </p>
+                                    <div class="progressbar">
+                                        <div class="statusBar" style="width: 25%;"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header section  -->
+
+
+<main>
+    <section class="dashboard">
+        <div class="sidemenu">
+            <div class="tab">
+                <div class="root">
+                    <div class="order-track">
+                        <div class="order-track-step active">
+                            <div class="order-track-text">
+                                <p class="order-track-text-stat"> Basic <span class="deskhide">Details</span></p>
+                            </div>
+                        </div>
+                        <div class="order-track-step active">
+                            <div class="order-track-status">
+                                <!-- <span class="order-track-status-dot"></span> -->
+                                <span class="order-track-status-line"></span>
+                            </div>
+                            <div class="order-track-text">
+                                <p class="order-track-text-stat">Lifestyle <span class="deskhide">Details</span></p>
+                            </div>
+                        </div>
+                        <div class="order-track-step active">
+                            <div class="order-track-status">
+                                <!-- <span class="order-track-status-dot"></span> -->
+                                <span class="order-track-status-line"></span>
+                            </div>
+                            <div class="order-track-text">
+                                <p class="order-track-text-stat">Confirm <span class="deskhide">your Details</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="family_cards">
+                    <div class="family_cards">
+                        <div *ngFor="let iconDetail of iconDetails; let i = index" href="#" class="card">
+                            <img [src]="'./assets/images/users/' + iconIds[i] + '.png'" class="img-fluid" alt="user">
+                            <span class="text">{{ capitalizeFirstLetter(iconDetail)}}
+                                <!-- <span class="son" *ngIf="iconIds[i] == 3  && sonCount>1 ">({{
+                                    sonCount }})</span>
+                                <span class="daughter" *ngIf="iconIds[i] == 4  && daughterCount>1 ">({{
+                                    daughterCount }})</span> -->
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="workspace">
+            <div class="workspace-container-wrapper">
+                <div class="sub-menu" id="sub-menu">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- <div class="left">
+                                <a id="previous" *ngIf="!cookingSlide" class="back" (click)="backBtn()"><span
+                                        class="material-icons-outlined">
+                                        arrow_back_ios
+                                    </span><span class="text">Back</span></a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngIf="!cookingSlide">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="personal_details">
+                                        <h5 class="title pl-0">Basic Details</h5>
+                                        <span class="subtitle pl-0">Total members covered: {{total_members}}</span>
+                                        <div class="bdr_line">
+                                            <hr>
+                                        </div>
+                                        <div class="right">
+                                            <!-- <div class="family_cards">
+                                                <div *ngFor="let iconDetail of iconDetails; let i = index" href="#"
+                                                    class="card">
+                                                    <img [src]="'./assets/images/users/' + iconIds[i] + '.png'"
+                                                        class="img-fluid" alt="user">
+                                                    <span class="text">{{ capitalizeFirstLetter(iconDetail)}}
+                                                        <span class="son" *ngIf="iconIds[i] == 3  && sonCount>1 ">({{
+                                                            sonCount }})</span>
+                                                        <span class="daughter"
+                                                            *ngIf="iconIds[i] == 4  && daughterCount>1 ">({{
+                                                            daughterCount }})</span>
+                                                    </span>
+                                                </div> 
+                                            </div> -->
+                                        </div>
+                                        <div class="family_details">
+                                            <p class="data"><strong>Member(s): </strong> <span>{{
+                                                    formatMemberArr(members)
+                                                    }}</span></p>
+                                            <p class="data"><strong>Family Annual Income: </strong>
+                                                <span>{{familyIcome}}</span>
+                                            </p>
+                                            <p class="data"><strong>International treatment: </strong>
+                                                <span>{{internationTreatment==1?"Yes":"No"}}</span>
+                                            </p>
+                                            <p class="data"><strong>Maternity Cover: </strong>
+                                                <span>{{maternityCover==1?"Yes":"No"}}</span>
+                                            </p>
+                                        </div>
+                                        <button (click)="editDetails('basic')" class="btn edit"><span
+                                                class="material-icons-outlined">
+                                                mode_edit
+                                            </span></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="personal_details mm">
+                                        <h5 class="title">Insured details</h5>
+                                        <span class="subtitle">Age & any pre-existing disease (PED)
+                                            <!-- {{total_members}} -->
+                                        </span>
+                                        <div class="bdr_line">
+                                            <hr>
+                                        </div>
+                                        <div class="mytable" style="overflow-x:auto;">
+                                            <table class="w-100">
+                                                <tr class="theading mob_hide">
+                                                    <th>Member(s)</th>
+                                                    <th>Age</th>
+                                                    <th>Physical Activity</th>
+                                                    <th>Consumes Alcohol</th>
+                                                    <th>Smokes/Consumes Tobacco</th>
+                                                    <th>Medical History</th>
+                                                </tr>
+                                                <tr class="card_view theading"
+                                                    *ngFor="let item of memberFormData ; let i=index">
+                                                    <td><span
+                                                            class="mob_txt">Member:</span>{{formatMemberType(item.memberType)}}
+                                                    </td>
+                                                    <td><span class="mob_txt">Age:</span>{{item.age+' '+item.age_type}}
+                                                    </td>
+                                                    <td><span class="mob_txt">Physical
+                                                            Activity:</span>{{item.physical_activity}}
+                                                    </td>
+                                                    <!-- <td><span class="mob_txt">Consumes Alcohol:</span>{{
+                                                        item.consume_alcohol == 1 ? 'Yes' : 'No' }}
+                                                        <ng-container *ngIf="item.consume_alcohol == 1">
+                                                            ({{ capitalizeAndAddSpace(item.consume_alcohol_frequency) }})
+                                                        </ng-container>    
+                                                    </td> -->
+                                                    <td>
+                                                        <span class="mob_txt">Consumes Alcohol:</span>
+                                                        {{
+                                                        item.consume_alcohol_frequency ?
+                                                        capitalizeAndAddSpace(item.consume_alcohol_frequency) :
+                                                        (item.consume_alcohol == '1' ? 'Yes' : 'No')
+                                                        }}
+                                                        <!-- <ng-container *ngIf="item.consume_alcohol_frequency">
+                                                            {{ capitalizeAndAddSpace(item.consume_alcohol_frequency) }}
+                                                        </ng-container> -->
+                                                    </td>
+                                                    <td><span class="mob_txt">Smokes/Consumes Tobacco:</span>{{
+                                                        item.consume_tobacco == 1 ? 'Yes' : 'No' }}</td>
+                                                    <td><span class="mob_txt">Medical History:</span>{{ item.PED_status
+                                                        == 1 ? 'Yes' : 'No' }}
+                                                        <ng-container *ngIf="item.PED_status == 1">
+                                                            ({{ formatPED(item.PED_text) }})
+                                                        </ng-container>
+                                                    </td>
+                                                </tr>
+                                                <!-- <tr class="theading">
+                                                    <td>Spouse</td>
+                                                    <td>32</td>
+                                                    <td>Daily</td>
+                                                    <td>Yes</td>
+                                                    <td>Yes</td>
+                                                    <td>Yes (Others)</td>
+                                                </tr> -->
+                                            </table>
+                                        </div>
+                                        <button (click)="editDetails('lifestyle')" class="btn edit"><span
+                                                class="material-icons-outlined">
+                                                mode_edit
+                                            </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="swiper-slide" *ngIf="cookingSlide">
+                            <div class="loader">
+                                <div class="content">
+                                    <h3 class="title">Your Report is Ready ✅</h3>
+                                    <p class="text">Come, let’s see what’s in it for you</p>
+                                </div>
+                                <img src="./assets/images/loader.png" class="img-fluid loadergif" alt="loader">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="next_btn" *ngIf="!cookingSlide">
+                    <button (click)="generateReport()" class="btn">Confirm & Generate Report</button>
+                </div>
+                <div class="error d-none">
+                    <p class="text">Please select any option to proceed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- popup added -->
+<div class="awesome" id="awesome">
+    <img src="./assets/images/tiger3.png.webp" class="img-fluid success" alt="awesome">
+</div>
+<!-- popup added -->

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="print.css" re"stylesheet" type="text/css" media="print"/> -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @page {
+      margin: 27mm 16mm 27mm 16mm;
+      size: A4;
+      marks: crop cross;
+      bleed: 7pt;
+    }
+
+    html,
+    body {
+      width: 250mm;
+      margin: 18% 18% 18% 18%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    body {
+      padding-top: 20mm;
+      /* Adjust as needed for header */
+      padding-bottom: 25mm;
+      /* Adjust as needed for footer */
+      margin-top: 10mm;
+      margin-bottom: 10mm;
+      background: #FFF;
+    }
+
+    .body_wrapper {
+      width: 250mm;
+      height: 520mm;
+      margin: auto;
+      background: #FFF;
+      page: cover;
+      page-break-before: always;
+    }
+
+    .fixed_width {
+      width: 250mm;
+    }
+
+    .logo_margin {
+      margin-bottom: 58mm;
+    }
+
+    .logo_margin_laptop {
+      margin-bottom: 64mm;
+    }
+
+    .name {
+      font-size: 12mm;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 10mm;
+    }
+
+    .text {
+      font-size: 8mm;
+      text-align: left;
+      line-height: 15mm;
+    }
+
+    .text2 {
+      font-size: 6.5mm;
+      text-align: left;
+      line-height: 12mm;
+    }
+
+    .heading {
+      font-size: 8mm;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 2mm;
+    }
+
+    .heading2 {
+      font-size: 7mm;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 10mm;
+    }
+
+    .body_wrapper2 {
+      width: 250mm;
+      height: 540mm;
+      margin: auto;
+      background: #FFF;
+      page: cover;
+      page-break-before: always;
+    }
+
+    .body_wrapper3 {
+      width: 250mm;
+      margin: auto;
+      background: #FFF;
+      page: cover;
+      page-break-before: always;
+      padding-top: 10mm;
+      padding-bottom: 18mm;
+      margin-bottom: 10mm;
+    }
+
+    .f_heading {
+      font-size: 4.5mm;
+      font-weight: 500;
+      text-align: left;
+      margin-bottom: 2mm;
+      display: block;
+    }
+
+    .f_heading2 {
+      font-size: 8mm;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 5mm;
+      display: block;
+    }
+
+    .f_name {
+      font-size: 8mm;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 4mm;
+    }
+
+    .f_details {
+      border-radius: 8px;
+      border: 1px solid #E9E9E9;
+      padding: 2mm;
+    }
+
+    .f_recommend {
+      display: flex;
+      margin-top: 6mm;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm;
+    }
+
+    .left {
+      width: 125mm;
+    }
+
+    .right {
+      width: 125mm;
+      border-radius: 4px;
+    }
+
+    .right_wrapper {
+      padding-top: 5mm;
+      padding-left: 5mm;
+      padding-bottom: 5mm;
+      padding-right: 5mm;
+      margin-top: 8mm;
+      background: #F3F2EE;
+      border-bottom: 2px solid #fff;
+    }
+
+    .right_wrapper2 {
+      padding-top: 13mm;
+      padding-left: 5mm;
+      padding-bottom: 4mm;
+      padding-right: 5mm;
+      background: #F3F2EE;
+    }
+
+    .amount {
+      border-radius: 4px;
+      background: #F3F2EE;
+      margin-top: 15mm;
+    }
+
+    .list {
+      list-style-type: none;
+      display: flex;
+      padding-top: 5mm;
+      padding-left: 5mm;
+      padding-bottom: 5mm;
+      padding-right: 5mm;
+      justify-content: space-between;
+    }
+
+    .list2 {
+      list-style-type: none;
+      padding-top: 5mm;
+      padding-left: 5mm;
+      padding-bottom: 5mm;
+      padding-right: 5mm;
+      text-align: left;
+    }
+
+    .list2 li {
+      padding-bottom: 10mm;
+
+    }
+
+    .base {
+      color: #333846;
+      font-size: 6.5mm;
+      text-align: left;
+      font-weight: 500;
+      line-height: 20px;
+      /* 153.846% */
+    }
+
+    .b_amount {
+      color: var(--subheading, #333846);
+      font-family: Montserrat;
+      font-size: 6.5mm;
+      text-align: left;
+      font-weight: 600;
+      line-height: 20px;
+      /* 153.846% */
+    }
+
+    .r_heading {
+      color: #1F1F1F;
+      font-size: 14mm;
+      text-align: left;
+      font-weight: 700;
+      line-height: 20px;
+      margin-top: 5mm;
+      margin-bottom: 8mm;
+    }
+
+    .r_text {
+      font-size: 6mm;
+      text-align: left;
+      line-height: 8mm;
+      margin-bottom: 8mm;
+    }
+
+    .btm_bdr {
+      border-bottom: 2px solid #E9E9E9;
+      padding-top: 10mm;
+      padding-bottom: 10mm;
+    }
+
+    .rm_box {
+      border-radius: 8px;
+      border: 1px solid #E9E9E9;
+    }
+
+    .rm_heading {
+      border-radius: 7.455px 7.455px 0px 0px;
+      background: var(--Progress-bar, linear-gradient(270deg, #F3B908 5.26%, #FFE492 96.84%));
+      color: #333846;
+      font-size: 10mm;
+      text-align: left;
+      font-weight: 800;
+      line-height: 20px;
+      padding: 8mm 8mm 8mm 8mm;
+    }
+
+    .r_recommend {
+      display: flex;
+      margin-top: 6mm;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm;
+      padding: 8mm 8mm 8mm 8mm;
+    }
+
+    .disclaimer {
+      font-size: 4mm;
+      text-align: left;
+      font-weight: 500;
+      line-height: 20px;
+      font-style: italic;
+    }
+
+    .email {
+      font-size: 6mm;
+      text-align: left;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    .red {
+      color: #DA2128;
+      font-weight: 700;
+    }
+  </style>
+
+  <style>
+    @media screen and (max-width: 767px) {
+
+      @page {
+        size: A4;
+        marks: crop cross;
+        bleed: 7pt;
+        padding-bottom: 5mm;
+      }
+
+      html,
+      body,
+      .body_wrapper,
+      .fixed_width,
+      .body_wrapper2,
+      .body_wrapper3 {
+        width: 100%;
+        margin: 0;
+        padding-left: 4mm;
+        padding-right: 4mm;
+        height: auto;
+      }
+
+      body {
+        padding-top: 8mm;
+        padding-left: 0mm;
+        padding-right: 0mm;
+        padding-bottom: 8mm;
+      }
+
+      .right,
+      .left {
+        width: 50%;
+      }
+
+
+      /* .text,
+      .f_heading2,
+      .r_text,
+      .r_heading,
+      .heading2,
+      .heading,
+      .b_amount,
+      .base {
+        font-size: 5mm;
+        line-height: inherit;
+      } */
+
+      .name {
+        font-size: 3mm;
+        line-height: inherit;
+      }
+
+      .text {
+        font-size: 2.5mm;
+        line-height: inherit;
+      }
+
+      .logo_margin {
+        width: 45%;
+        margin-bottom: 16mm;
+      }
+
+      .mobile_logo {
+        width: 20%;
+      }
+
+      .logo_margin_laptop {
+        width: 95%;
+        margin-bottom: 8mm;
+
+      }
+
+      .body_wrapper {
+        page-break-after: always;
+        break-after: always;
+        height: 140mm;
+      }
+
+      .heading {
+        font-size: 3.5mm;
+        line-height: inherit;
+      }
+
+      .mobile_user {
+        width: 8mm;
+      }
+
+      .f_details {
+        padding: 2mm 0mm;
+      }
+
+      .f_heading,
+      .f_heading2,
+      .text2,
+      .text,
+      .f_heading2,
+      .r_text,
+      .r_heading,
+      .heading2,
+      .heading,
+      .b_amount,
+      .base,
+      .disclaimer,
+      .mobfont {
+        font-size: 2mm !important;
+        line-height: inherit;
+        margin: auto auto 2mm auto;
+      }
+
+      .f_name {
+        font-size: 2.5mm;
+      }
+
+      .list {
+        padding-top: 2mm;
+        padding-left: 2mm;
+        padding-bottom: 2mm;
+        padding-right: 2mm;
+      }
+
+      .amount {
+        margin-top: 1mm;
+      }
+
+      .amount .list:nth-child(1) {
+        padding-bottom: 0;
+      }
+
+      r_heading {
+        font-size: 4mm;
+      }
+
+      .amount .list:nth-child(2) {
+        padding-top: 0;
+      }
+
+      svg {
+        width: 6mm;
+        height: auto;
+      }
+
+      .right_wrapper2 {
+        padding-top: 3mm;
+        padding-left: 2mm;
+        padding-bottom: 3mm;
+        padding-right: 2mm;
+      }
+
+      .list2 {
+        padding-left: 0mm;
+        padding-right: 0mm;
+        padding-top: 1mm;
+        padding-bottom: 1mm;
+      }
+
+      .list2 .text2 {
+        padding-bottom: 6mm;
+      }
+
+      .body_wrapper3 {
+        padding-top: 1mm;
+        padding-bottom: 1mm;
+      }
+
+      .heading2 {
+        margin-bottom: 2mm;
+      }
+
+      .r_heading {
+        font-size: 4mm;
+      }
+
+      .right_wrapper {
+        padding-top: 2mm;
+        padding-left: 2mm;
+        padding-bottom: 0mm;
+        padding-right: 2mm;
+      }
+
+      .mob_hide {
+        display: none;
+      }
+
+      .mob_margin {
+        margin-bottom: 0 !important;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Your content goes here -->
+  <div class="body_wrapper">
+    <div class="fixed_width">
+      <img src="../../assets/images/report/logo.png" width="450" class="logo_margin">
+    </div>
+    <div class="fixed_width">
+      <img src="../../assets/images/report/Creatives-Images-15-1.png" width="1000" class="logo_margin_laptop">
+    </div>
+    <div class="fixed_width">
+      <p class="name">Hello {{UserDetail?.name | nameFormatter}}</p>
+      <p class="text">It’s time to consider our Second Opinion. A carefully calculated yet simple report to help you
+        suggest the best Health Insurance cover for you & your family.</p>
+    </div>
+  </div>
+
+
+  <div class="body_wrapper2">
+
+    <div class="fixed_width btm_bdr">
+      <h2 class="heading">Family Details</h2>
+      <div class="f_details">
+        <table>
+          <tbody>
+            <tr>
+              <td style="height: 20px;" class="mob_hide"></td>
+            </tr>
+            <tr>
+              <td width="198">
+                <img src="../../assets/images/report/report_user.png" width="88" class="mobile_user">
+              </td>
+              <td width="320" align="left">
+                <span class="f_heading mob_margin">Name</span>
+                <span class="f_name">{{UserDetail?.name | nameFormatter}}</span>
+              </td>
+              <td width="220" align="left">
+                <span class="f_heading mob_margin">Gender</span>
+                <span class="f_name">{{UserDetail?.gender}}</span>
+              </td>
+              <td width="220" align="left">
+                <span class="f_heading mob_margin">Age</span>
+                <span class="f_name">{{UserDetail?.member[0].age}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="height: 20px;" class="mob_hide"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="f_recommend">
+        <div class="left">
+          <h2 class="f_heading2">Your recommended health cover:</h2>
+          <p class="text2">We've tailored a personalized insurance cover to fit your family's needs basis your lifestyle
+            & health needs</p>
+          <div class="amount">
+            <ul class="list">
+              <li><span class="base">Base Amount:</span></li>
+              <li><span class="b_amount">₹{{Base_amount}}</span></li>
+            </ul>
+            <ul class="list">
+              <li><span class="base">Top-up (over base):</span></li>
+              <li><span class="b_amount">₹{{topUp}}</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right_wrapper">
+            <p class="r_text">Ideal Total Coverage</p>
+            <h4 class="r_heading">₹{{output_2}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="68" height="58"
+                viewBox="0 0 48 47" fill="none">
+                <g filter="url(#filter0_d_6948_473)">
+                  <path d="M3 2.5H45V23.5C45 35.098 35.598 44.5 24 44.5C12.402 44.5 3 35.098 3 23.5V2.5Z"
+                    fill="white" />
+                  <mask id="mask0_6948_473" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="9" y="8"
+                    width="29" height="32">
+                    <path
+                      d="M11.3984 13.1792L24.0047 9.5L36.5984 13.1792V20.7238C36.5984 24.5904 35.3816 28.3589 33.1206 31.4955C30.8595 34.6321 27.6688 36.9777 24.0005 38.2C20.3311 36.9779 17.1393 34.6319 14.8775 31.4947C12.6157 28.3574 11.3985 24.5879 11.3984 20.7203V13.1792Z"
+                      fill="white" stroke="black" stroke-width="2.8" stroke-linejoin="round" />
+                    <path d="M17.6992 22.8L22.5992 27.7L30.9992 19.3" stroke="black" stroke-width="2.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </mask>
+                  <g mask="url(#mask0_6948_473)">
+                    <path d="M7.54922 7.05001H40.4492V39.95H7.54922V7.05001Z" fill="#F2C94C" stroke="black"
+                      stroke-width="0.7" />
+                  </g>
+                </g>
+                <defs>
+                  <filter id="filter0_d_6948_473" x="0.9" y="0.4" width="46.2" height="46.2"
+                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha" />
+                    <feOffset />
+                    <feGaussianBlur stdDeviation="1.05" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6948_473" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6948_473" result="shape" />
+                  </filter>
+                </defs>
+              </svg></h4>
+            <p class="r_text">Your average annual premium will be <strong>{{output_3 | premiumRangeFormat
+                }}*</strong></p>
+          </div>
+          <div class="right_wrapper2">
+            <p class="r_text">*This amount is based upon your medical declaration & the number of riders covered.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- single case  -->
+
+    <div class="fixed_width btm_bdr" [ngClass]="( OtherPlan_details.length > 0) ? 'd-none' : ''"
+      *ngFor="let item of OtherPlan_details; let i = index">
+      <h2 class="heading">{{i+1}}.{{item[0]?.pck}}</h2>
+      <!-- <div class="f_details">
+        <table>
+          <tbody>
+            <tr>
+              <td style="height: 20px;"></td>
+            </tr>
+            <tr>
+              <td width="198">
+                <img src="../../assets/images/report/report_user.png" width="88">
+              </td>
+              <td width="320" align="left">
+                <span class="f_heading">Name</span>
+                <span class="f_name">{{UserDetail?.name}}</span>
+              </td>
+              <td width="220" align="left">
+                <span class="f_heading">Gender</span>
+                <span class="f_name">{{UserDetail?.gender}}</span>
+              </td>
+              <td width="220" align="left">
+                <span class="f_heading">Age</span>
+                <span class="f_name">{{UserDetail?.member[0].age}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="height: 20px;"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+      <div class="f_recommend">
+        <div class="left">
+          <h2 class="f_heading2">Your recommended health cover:</h2>
+          <p class="text2">We've tailored a personalized insurance cover to fit your family's needs basis your lifestyle
+            & health needs</p>
+          <div class="amount">
+            <ul class="list">
+              <li><span class="base">Base Amount:</span></li>
+              <li><span class="b_amount">₹{{calculateBaseTopUp(item[0].family_combination,
+                  item[0].output_2, 'base')}}</span></li>
+            </ul>
+            <ul class="list">
+              <li><span class="base">Top-up (over base):</span></li>
+              <li><span class="b_amount">₹{{calculateBaseTopUp(item[0].family_combination,
+                  item[0].output_2, 'topup')}}</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right_wrapper">
+            <p class="r_text">Ideal Total Coverage</p>
+            <h4 class="r_heading">₹{{item[0]?.output_2}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="68"
+                height="58" viewBox="0 0 48 47" fill="none">
+                <g filter="url(#filter0_d_6948_473)">
+                  <path d="M3 2.5H45V23.5C45 35.098 35.598 44.5 24 44.5C12.402 44.5 3 35.098 3 23.5V2.5Z"
+                    fill="white" />
+                  <mask id="mask0_6948_473" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="9" y="8"
+                    width="29" height="32">
+                    <path
+                      d="M11.3984 13.1792L24.0047 9.5L36.5984 13.1792V20.7238C36.5984 24.5904 35.3816 28.3589 33.1206 31.4955C30.8595 34.6321 27.6688 36.9777 24.0005 38.2C20.3311 36.9779 17.1393 34.6319 14.8775 31.4947C12.6157 28.3574 11.3985 24.5879 11.3984 20.7203V13.1792Z"
+                      fill="white" stroke="black" stroke-width="2.8" stroke-linejoin="round" />
+                    <path d="M17.6992 22.8L22.5992 27.7L30.9992 19.3" stroke="black" stroke-width="2.8"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </mask>
+                  <g mask="url(#mask0_6948_473)">
+                    <path d="M7.54922 7.05001H40.4492V39.95H7.54922V7.05001Z" fill="#F2C94C" stroke="black"
+                      stroke-width="0.7" />
+                  </g>
+                </g>
+                <defs>
+                  <filter id="filter0_d_6948_473" x="0.9" y="0.4" width="46.2" height="46.2"
+                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha" />
+                    <feOffset />
+                    <feGaussianBlur stdDeviation="1.05" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6948_473" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6948_473" result="shape" />
+                  </filter>
+                </defs>
+              </svg></h4>
+            <p class="r_text">Your average annual premium will be <strong>{{ item[0]?.output_3 |
+                premiumRangeFormat}}*</strong></p>
+          </div>
+          <div class="right_wrapper2">
+            <p class="r_text">*This amount is based upon your medical declaration & the number of riders covered.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- single case -->
+
+
+    <!-- multiple case  -->
+
+    <div class="fixed_width btm_bdr" *ngIf="OtherPlan_details"
+      [ngClass]="( OtherPlan_details.length > 0) ? '' : 'd-none'">
+      <div *ngFor="let item of OtherPlan_details; let i = index" style="padding-bottom: 10mm;">
+
+
+        <h2 class="heading">{{i+1}}.{{item[0]?.pck}}</h2>
+        <!-- <div class="f_details">
+        <table>
+          <tbody>
+            <tr>
+              <td style="height: 20px;"></td>
+            </tr>
+            <tr>
+              <td width="198">
+                <img src="../../assets/images/report/report_user.png" width="88">
+              </td>
+              <td width="320" align="left">
+                <span class="f_heading">Name</span>
+                <span class="f_name">{{UserDetail?.name}}</span>
+              </td>
+              <td width="220" align="left">
+                <span class="f_heading">Gender</span>
+                <span class="f_name">{{UserDetail?.gender}}</span>
+              </td>
+              <td width="220" align="left">
+                <span class="f_heading">Age</span>
+                <span class="f_name">{{UserDetail?.member[0].age}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="height: 20px;"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+        <div class="f_recommend">
+          <div class="left">
+            <h2 class="f_heading2">Your recommended health cover:</h2>
+            <p class="text2">We've tailored a personalized insurance cover to fit your family's needs basis your
+              lifestyle
+              & health needs</p>
+            <div class="amount">
+              <ul class="list">
+                <li><span class="base">Base Amount:</span></li>
+                <li><span class="b_amount">₹{{calculateBaseTopUp(item[0].family_combination, item[0].output_2,
+                    'base')}}</span></li>
+              </ul>
+              <ul class="list">
+                <li><span class="base">Top-up (over base):</span></li>
+                <li><span class="b_amount">₹{{calculateBaseTopUp(item[0].family_combination, item[0].output_2,
+                    'topup')}}</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right_wrapper">
+              <p class="r_text">Ideal Total Coverage</p>
+              <h4 class="r_heading">₹{{item[0]?.output_2}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="68"
+                  height="58" viewBox="0 0 48 47" fill="none">
+                  <g filter="url(#filter0_d_6948_473)">
+                    <path d="M3 2.5H45V23.5C45 35.098 35.598 44.5 24 44.5C12.402 44.5 3 35.098 3 23.5V2.5Z"
+                      fill="white" />
+                    <mask id="mask0_6948_473" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="9" y="8"
+                      width="29" height="32">
+                      <path
+                        d="M11.3984 13.1792L24.0047 9.5L36.5984 13.1792V20.7238C36.5984 24.5904 35.3816 28.3589 33.1206 31.4955C30.8595 34.6321 27.6688 36.9777 24.0005 38.2C20.3311 36.9779 17.1393 34.6319 14.8775 31.4947C12.6157 28.3574 11.3985 24.5879 11.3984 20.7203V13.1792Z"
+                        fill="white" stroke="black" stroke-width="2.8" stroke-linejoin="round" />
+                      <path d="M17.6992 22.8L22.5992 27.7L30.9992 19.3" stroke="black" stroke-width="2.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </mask>
+                    <g mask="url(#mask0_6948_473)">
+                      <path d="M7.54922 7.05001H40.4492V39.95H7.54922V7.05001Z" fill="#F2C94C" stroke="black"
+                        stroke-width="0.7" />
+                    </g>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_6948_473" x="0.9" y="0.4" width="46.2" height="46.2"
+                      filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="1.05" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6948_473" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6948_473" result="shape" />
+                    </filter>
+                  </defs>
+                </svg></h4>
+              <p class="r_text">Your average annual premium will be <strong>{{ item[0]?.output_3 |
+                  premiumRangeFormat}}*</strong></p>
+            </div>
+            <div class="right_wrapper2">
+              <p class="r_text">*This amount is based upon your medical declaration & the number of riders covered.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- multiple case  -->
+
+
+
+  </div>
+  <div class="body_wrapper3">
+    <div class="fixed_width">
+      <h2 class="heading">Points to Ponder</h2>
+      <h2 class="heading2">Don't rely solely on Employer Health Insurance:</h2>
+      <ul class="list2">
+        <li class="text2"><strong>a.</strong> Limited Coverage: Employers usually offer lower coverage, typically
+          between 1 to 5
+          lakhs, with group medical policies.</li>
+        <li class="text2"><strong>b.</strong> Portability and Renewal Limits: Employer insurance is valid only if you're
+          with the
+          company. Once you leave, you can't transfer or renew the policy.</li>
+        <li class="text2"><strong>c.</strong> Co-payment: Some employer insurance policies require co-payment, meaning
+          you must pay a
+          portion of medical expenses out of your pocket when making a claim.</li>
+        <li class="text2"><strong>d.</strong> Cashless Facility: For CGHS (Central Government Health Scheme) for central
+          government
+          employees or state government covers, there's no cashless facility. Everything operates on a reimbursement
+          basis, meaning you'll need to have funds available to pay upfront.</li>
+      </ul>
+    </div>
+
+    <div class="fixed_width">
+      <h2 class="heading2">Why buying a combination of plans may be a smarter choice for you:</h2>
+      <ul class="list2">
+        <li class="text2"><strong>a. Comprehensive coverage at a lower overall cost:</strong> Combining a base health
+          insurance policy with a top-up policy often results in lower premiums with comprehensive coverage compared to
+          having only the base policy.</li>
+        <li class="text2"><strong>b. Tailored Coverage:</strong> Base plus top-up plans allow policyholders to customize
+          their insurance coverage to match their specific needs.</li>
+        <li class="text2"><strong>c. Flexibility in Coverage Limits:</strong> This means policyholders can choose
+          coverage levels that fit their budget while still providing adequate protection against risks.</li>
+      </ul>
+    </div>
+
+    <div class="fixed_width">
+      <h2 class="heading2">Health insurance looks after your lifestyle in a holistic manner:</h2>
+      <ul class="list2">
+        <li class="text2"><strong>a. Ensuring Access to Healthcare:</strong> Health insurance ensures that you have
+          unfettered access to crucial healthcare services. From routine check-ups to specialized treatments.</li>
+
+        <li class="text2"><strong>b. Financial Burdens:</strong> Without health insurance, medical expenses can quickly
+          go out of control. Health insurance shields you from financial strain.</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="body_wrapper3">
+    <div class="fixed_width">
+      <ul class="list2">
+        <li class="text2"><strong>c. Providing Peace of Mind:</strong> Knowing that you're covered by health insurance
+          offers invaluable peace of mind.</li>
+      </ul>
+    </div>
+
+    <div class="fixed_width">
+      <h2 class="heading2">Getting health insurance when you're young can save you from paying big premiums later:</h2>
+      <ul class="list2">
+        <li class="text2"><strong>a. Lower Premiums:</strong> Health insurance costs less for younger people. Getting
+          insurance early creates a record that can keep your premiums lower over time compared to buying the same
+          coverage at a higher cost as you get older. Some plans adjust premiums based on your age.</li>
+        <li class="text2"><strong>b. Coverage against Pre-Existing Disease:</strong> If you wait until you're older to
+          get insurance, you might have pre-existing conditions that could lead to higher premiums or even difficulty
+          getting coverage at all.</li>
+        <li class="text2"><strong>c. No Claim Bonus:</strong> When you're young and healthy, with a no-claim, increase
+          your coverage limits.</li>
+      </ul>
+    </div>
+
+    <div class="fixed_width">
+
+      <div class="rm_box" *ngIf="rm_mobile">
+        <h4 class="rm_heading">
+          Relationship Manager
+        </h4>
+
+        <div class="r_recommend">
+          <div class="left">
+            <h3 class="heading2" style="margin-bottom: 2mm;">{{rm_name}}</h3>
+            <!-- <p class="text2">{{branch_code}}</p> -->
+          </div>
+          <div class="right">
+
+            <p class="text2" style="color: #DA2128;font-weight: 700;text-align: right;">{{rm_email}}</p>
+            <p class="text2" style="color: #000;font-weight: 700;text-align: right;"><svg
+                xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+                <path
+                  d="M20.2668 5.08276C19.2916 4.12395 18.13 3.36373 16.8498 2.84645C15.5695 2.32917 14.1963 2.06519 12.8102 2.06989C7.00224 2.06989 2.26869 6.67721 2.26869 12.3302C2.26869 14.1421 2.758 15.9022 3.6728 17.4552L2.18359 22.777L7.76812 21.3482C9.31051 22.1661 11.0444 22.6009 12.8102 22.6009C18.6181 22.6009 23.3516 17.9936 23.3516 12.3406C23.3516 9.59691 22.256 7.01888 20.2668 5.08276ZM12.8102 20.8616C11.2358 20.8616 9.69345 20.4474 8.34253 19.6709L8.02341 19.4845L4.70461 20.3335L5.5875 17.186L5.37475 16.8651C4.5001 15.5056 4.03568 13.9343 4.03447 12.3302C4.03447 7.62973 7.97023 3.79893 12.7995 3.79893C15.1397 3.79893 17.3416 4.68933 18.9904 6.30448C19.8067 7.09545 20.4537 8.03628 20.8938 9.07242C21.3338 10.1086 21.5582 11.2194 21.5539 12.3406C21.5752 17.0411 17.6394 20.8616 12.8102 20.8616ZM17.6182 14.4838C17.3522 14.3595 16.0545 13.7383 15.8205 13.6451C15.5758 13.5623 15.4056 13.5209 15.2248 13.7694C15.044 14.0282 14.544 14.608 14.3951 14.7737C14.2462 14.9497 14.0866 14.9704 13.8207 14.8358C13.5548 14.7116 12.7038 14.432 11.7039 13.5623C10.9167 12.879 10.3955 12.0403 10.2359 11.7815C10.087 11.5227 10.2147 11.3881 10.353 11.2535C10.47 11.1396 10.6189 10.9532 10.7465 10.8083C10.8742 10.6633 10.9274 10.5494 11.0125 10.3838C11.0976 10.2078 11.055 10.0628 10.9912 9.93857C10.9274 9.81433 10.3955 8.5512 10.1828 8.03352C9.97002 7.53655 9.74664 7.59867 9.58708 7.58832H9.07649C8.89566 7.58832 8.6191 7.65044 8.37444 7.90928C8.14042 8.16812 7.45964 8.78933 7.45964 10.0525C7.45964 11.3156 8.40635 12.5373 8.534 12.703C8.66164 12.879 10.3955 15.4674 13.0335 16.5752C13.6611 16.8444 14.1504 16.9997 14.5334 17.1136C15.161 17.3103 15.7354 17.2792 16.1928 17.2171C16.7034 17.1446 17.7564 16.5959 17.9692 15.9954C18.1926 15.3949 18.1926 14.8876 18.1181 14.7737C18.0437 14.6598 17.8841 14.608 17.6182 14.4838Z"
+                  fill="#1F1F1F" />
+              </svg> &nbsp;{{rm_mobile}}</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="disclaimer" style="margin-top: 6mm;"><strong>Disclaimer:</strong> The above Health Insurance Portfolio
+        review has been conducted based on the information provided by the client. The premium quotations and/or product
+        features and benefits mentioned above may or may not be available at the time of purchasing the policy. The
+        final decision to issue the policy at the given premium rests with the Insurance Company based on medical and
+        financial underwriting. We will provide you with a minimum of three comparative quotes to assist you in
+        selecting the best plan according to your requirements. Prospective clients are advised to review the product
+        brochure before making a final purchasing decision. Additionally, please note the possibility of premiums being
+        revised by the insurer after 24 hours of generating this report.</p>
+
+      <p class="text2" style="margin-top: 6mm;">Email Us at <span class="red">care@bajajcapital.com</span></p>
+      <p class="text2" style="margin-top: 6mm;">or for Immediate Assistance call us at <span class="red">1800 212
+          123123</span><span class="mobfont" style="float: right;color: #4F535D;float: right;font-size: 5mm;">
+          {{ currentTime | date:'dd-MM-yyyy h:mm a'}}</span></p>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,419 @@
+input[type=checkbox] {
+    width: 12px;
+    height: 12px;
+    accent-color: #DA2128;
+    position: relative;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.awesome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+}
+
+.awesome .success {
+    width: 30%;
+}
+
+.complete {
+    display: flex;
+    width: 188px;
+    /* padding: 12px 18px; */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    /* border-radius: 8px;
+    background: #F3F2EE;
+    margin-top: 16px; */
+    transform: translateX(30px);
+    margin: auto;
+    margin-right: 0;
+}
+
+.complete .heading {
+    color: #636363;
+    text-align: left;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+.complete .progressbar {
+    background: #E4E2DB;
+    border-radius: 15px;
+    width: 100%;
+    height: 12px;
+    display: flex;
+    /* margin: 16px 0px 24px; */
+}
+
+.complete .statusBar {
+    position: relative;
+    border-radius: 52px;
+    background: linear-gradient(270deg, #F3B908 5.26%, #FFE492 96.84%);
+    /* background: var(--Progress-bar, linear-gradient(270deg, #F3B908 5.26%, #FFE492 96.84%)); */
+    border-radius: 15px;
+    transition: all 0.8s;
+}
+
+
+
+
+
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+    .mob_hide {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .mob_hide {
+        display: none;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .mob_hide {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+    .dashboard {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard .sidemenu,
+    .workspace {
+        width: 100%;
+    }
+
+    .order-track {
+        flex-direction: row;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .order-track-step {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-track-status-line {
+        position: absolute;
+        top: -2rem;
+        transform: rotate(90deg);
+        right: -4rem;
+        height: 58px;
+    }
+
+    .order-track-text-stat {
+        position: relative;
+        top: 1rem;
+    }
+
+    .dashboard .sidemenu.sticky {
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards .card.content {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .dashboard {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard .sidemenu,
+    .workspace {
+        width: 100%;
+    }
+
+    .dashboard .sidemenu .tab {
+        border-bottom: 1px solid #EBEBEB;
+    }
+
+    .workspace {
+        padding: 0px;
+    }
+
+    .order-track {
+        flex-direction: row;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .order-track-step {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-track-status-line {
+        position: absolute;
+        top: -2rem;
+        transform: rotate(90deg);
+        right: -4rem;
+        height: 58px;
+    }
+
+    .order-track-text-stat {
+        position: relative;
+        top: 1rem;
+    }
+
+    .workspace .workspace-container-wrapper .sub-menu .right,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .right {
+        display: none;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box {
+        padding-top: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn .btn {
+        border-radius: 0px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .question {
+        padding-bottom: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box.tigerimg img {
+        width: 100%;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .family_details .data.member {
+        display: block;
+    }
+
+    .dashboard .sidemenu.sticky {
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards .card.content {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .dashboard {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard .sidemenu,
+    .workspace {
+        width: 100%;
+    }
+
+    .dashboard .sidemenu .tab {
+        border-bottom: 1px solid #EBEBEB;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+
+    .workspace .workspace-container-wrapper .sub-menu .right,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .right,
+    .deskhide {
+        display: none;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box {
+        padding-left: 8px;
+        padding-right: 8px;
+        height: auto;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn {
+        position: relative;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn .btn {
+        border-radius: 80px;
+        background: #DA2128;
+        width: fit-content;
+        height: 46px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFF;
+        text-align: center;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px 38px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .question {
+        padding-bottom: 0rem;
+        margin-bottom: 24px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box.tigerimg img,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .option-box .btn,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .left .option-box2 .btn,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .left,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .loader .loadergif,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .form-group .rm-box .btn,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .medical_input,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .medical_input .form-control,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right.layout-1,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .family_details .data,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .question,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .medical_input .custom_arr {
+        width: 100%;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right.layout-1 {
+        margin-top: 1.25rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .medical_input {
+        margin-bottom: 4rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .family_details .data.member {
+        display: block;
+    }
+
+    .workspace .workspace-container-wrapper {
+        width: 100%;
+        padding-top: 20px;
+        height: auto;
+    }
+
+    .workspace .workspace-container-wrapper .sub-menu {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* .workspace .workspace-container-wrapper .swiper {
+        margin-bottom: 5rem;
+    } */
+
+    .workspace .workspace-container-wrapper .report .content {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .gender {
+        margin-bottom: 32px;
+        margin-top: 6px;
+        padding-left: 12px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right {
+        padding-top: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right .tiger .img-fluid {
+        margin-bottom: 3rem;
+    }
+
+    /* .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .mytable table {
+        width: 38rem;
+    } */
+
+    /* .mm {
+        margin-bottom: 8rem !important;
+    } */
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .bottomimg .web,
+    .workspace .workspace-container-wrapper .sub-menu .left .complete {
+        display: none;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .bottomimg .mobile {
+        display: block;
+    }
+
+    .dashboard .sidemenu.sticky {
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards .card.content {
+        width: 20%;
+    }
+
+    .workspace .workspace-container {
+        padding: 32px 16px 30px 16px;
+    }
+
+    .workspace .workspace-container .family_floater {
+        overflow: auto;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards {
+        flex-wrap: nowrap;
+        width: 54rem;
+    }
+
+    .workspace .workspace-container .target .heading {
+        text-align: left;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .bottomimg {
+        height: 402px;
+        padding-top: 0px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .option-box .btn.desktop {
+        display: none;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .option-box .btn.mobile {
+        display: flex;
+    }
+
+    .dashboard .sidemenu .tab {
+        display: block;
+    }
+}
+
+.workspace .workspace-container-wrapper .swiper.phase-2 .swiper-slide .ques-box .user_li .user .form-check-label {
+    color: #1F1F1F;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    padding: 15px 15px 15px 40px;
+    margin-left: 0;
+    cursor: pointer;
+    text-transform: capitalize;
+}

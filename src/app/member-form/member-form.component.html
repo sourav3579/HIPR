@@ -1,0 +1,1239 @@
+<!-- header section -->
+<header class="header-container-wrapper">
+    <div class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6 logo">
+                    <a href="index.html">
+                        <img src="./assets/images/logo.png" alt="BCL" width="210">
+                    </a>
+                </div>
+                <div class="col-md-9 col-6 text-right">
+                    <div class="container">
+                        <div class="row align-items-center mob_hide">
+                            <div class="col-md-8">
+                                <div class="root">
+                                    <div class="order-track">
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <!-- <span class="order-track-status-line"></span> -->
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat"> Basic <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <span class="order-track-status-dot"></span>
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Lifestyle <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Confirm <span class="deskhide">your
+                                                        Details</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <div class="complete">
+                                    <p class="heading">25% Completed </p>
+                                    <div class="progressbar">
+                                        <div class="statusBar" style="width: 25%;"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="complete">
+                                <p class="heading">{{newprogressWidth}} Completed </p>
+                                <div class="progressbar">
+                                    <div class="statusBar" [style.width]="newprogressWidth"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header section  -->
+
+<section class="dashboard">
+    <div class="sidemenu">
+        <div class="tab">
+            <div class="root">
+                <div class="order-track">
+                    <div class="order-track-step active">
+                        <div class="order-track-status">
+                            <!-- <span class="order-track-status-dot"></span>
+                            <span class="order-track-status-line"></span> -->
+                        </div>
+                        <div class="order-track-text">
+                            <p class="order-track-text-stat"> Basic <span class="deskhide">Details</span></p>
+                        </div>
+                    </div>
+                    <div class="order-track-step active">
+                        <div class="order-track-status">
+                            <!-- <span class="order-track-status-dot"></span> -->
+                            <span class="order-track-status-line"></span>
+                        </div>
+                        <div class="order-track-text">
+                            <p class="order-track-text-stat">Lifestyle <span class="deskhide">Details</span></p>
+                        </div>
+                    </div>
+                    <div class="order-track-step">
+                        <div class="order-track-status">
+                            <!-- <span class="order-track-status-dot"></span> -->
+                            <span class="order-track-status-line"></span>
+                        </div>
+                        <div class="order-track-text">
+                            <p class="order-track-text-stat">Confirm <span class="deskhide">your Details</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="family_cards">
+                <div *ngFor="let iconDetail of iconDetails; let i = index" href="#" class="card" id="member">
+                    <img [src]="'./assets/images/users/' + iconIds[i] + '.png'" class="img-fluid" alt="user">
+                    <span class="text">{{ formatMemberNames(iconDetail) }}
+                        <!-- <span class="son" *ngIf="iconIds[i] == 3 && s_count>1">({{ s_count }})</span>
+                        <span class="daughter" *ngIf="iconIds[i] == 4 && d_count>1">({{ d_count
+                            }})</span> -->
+                    </span>
+                </div>
+                <!-- <div href="#" class="card" id="member" *ngFor="let member of selectedMembers">
+                    <img [src]="'./assets/images/users/' + memberImages[member]+'.png'" class="img-fluid" alt="user">
+                    <span class="text">{{ capitalizeFirstLetter(member) }}
+                        <span class="son" *ngIf=" memberImages[member] == 3 && insureOptions.son>1">({{insureOptions.son
+                            }})</span>
+                        <span class="daughter"
+                            *ngIf=" memberImages[member] == 4 && insureOptions.daughter>1">({{insureOptions.daughter
+                            }})</span>
+                    </span>
+                </div> -->
+                <!-- NEW HTML ADDED 09-03-24 -->
+                <!-- <div class="placeholder" *ngIf="selectedMembers.length==0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <path
+                            d="M9.84 24.32C9.61851 24.0823 9.35008 23.8932 9.05171 23.7647C8.75334 23.6362 8.43153 23.571 8.10667 23.5733C7.01334 23.5733 6.18667 24.08 5.65334 25.12C5.12 26.16 5.25334 27.1466 6.10667 28.08C9.25334 30.9066 11.2533 32.9066 12.1067 34.08C13.2 35.5733 13.7333 37.76 13.7333 40.5866C13.7333 44.08 15.0667 46.6666 17.7333 48.4533C19.2267 49.6266 20.8533 50.5066 22.6667 51.0933V40.72C22.6667 38.2133 21.7867 36.1333 20.1067 34.4533M43.8933 34.5866C42.24 36.24 41.3333 38.2933 41.3333 40.72V51.2C43.8933 50.2933 46.0267 48.88 47.7867 47.0133C49.52 45.1466 50.4 43.0933 50.4 40.5866C50.4 37.5733 50.9067 35.4133 51.92 34.08C52.16 33.6533 52.6133 33.12 53.3333 32.4533C53.9467 31.7866 54.5867 31.1466 55.2267 30.56C55.84 30 56.4533 29.4133 57.04 28.8266L57.92 28.08C58.1584 27.8534 58.3477 27.5803 58.4762 27.2775C58.6046 26.9748 58.6694 26.6488 58.6667 26.32C58.6667 25.5733 58.4267 24.9066 57.92 24.3733C57.4133 23.84 56.8 23.5733 56 23.5733C55.2 23.5733 54.6667 23.8133 54.16 24.32M32 53.3333C33.84 53.3333 35.6267 53.0933 37.3333 52.5866V43.0666C37.3333 41.4933 36.8533 40.2666 35.76 39.0933C34.6667 37.92 33.4133 37.3333 32 37.3333C30.5867 37.3333 29.3333 37.8666 28.32 38.96C27.2533 40 26.6667 41.2266 26.6667 42.8266V52.5866C28.3733 53.0933 30.16 53.3333 32 53.3333ZM24 22.6666C24 24.88 22.2133 26.6666 20 26.6666C17.7867 26.6666 16 24.88 16 22.6666C16 20.4533 17.7867 18.6666 20 18.6666C22.2133 18.6666 24 20.4533 24 22.6666ZM48 22.6666C48 24.88 46.2133 26.6666 44 26.6666C41.7867 26.6666 40 24.88 40 22.6666C40 20.4533 41.7867 18.6666 44 18.6666C46.2133 18.6666 48 20.4533 48 22.6666ZM36 14.6666C36 16.88 34.2133 18.6666 32 18.6666C29.7867 18.6666 28 16.88 28 14.6666C28 12.4533 29.7867 10.6666 32 10.6666C34.2133 10.6666 36 12.4533 36 14.6666ZM36 29.3333C36 31.5466 34.2133 33.3333 32 33.3333C29.7867 33.3333 28 31.5466 28 29.3333C28 27.12 29.7867 25.3333 32 25.3333C34.2133 25.3333 36 27.12 36 29.3333Z"
+                            fill="#ABABAB" />
+                    </svg>
+
+                    <p class="text">Your family members will show up here</p>
+                </div> -->
+                <!-- NEW HTML ADDED 09-03-24 -->
+            </div>
+        </div>
+    </div>
+    <div class="workspace">
+        <span class="right_ele"></span>
+        <a id="previous" class="back" (click)="backBtn()"><span class="material-icons-outlined">
+                arrow_back_ios
+            </span><span class="text">Back</span></a>
+        <div class="workspace-container-wrapper">
+            <div class="sub-menu" id="sub-menu">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="left">
+                            <!-- <div class="complete">
+                                <p class="heading">{{progressWidth}} Completed </p>
+                                <div class="progressbar">
+                                    <div class="statusBar" [style.width]="progressWidth"></div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="right">
+                            <!-- <div class="family_cards">
+                                <div *ngFor="let iconDetail of iconDetails; let i = index" href="#" class="card"
+                                    [class.active]="i==iconindex">
+                                    <img [src]="'./assets/images/users/' + iconIds[i] + '.png'" class="img-fluid"
+                                        alt="user">
+                                    <span class="text">{{ capitalizeFirstLetter(iconDetail) }}
+                                        <span class="son" *ngIf="iconIds[i] == 3 && s_count>1">({{ s_count }})</span>
+                                        <span class="daughter" *ngIf="iconIds[i] == 4 && d_count>1">({{ d_count
+                                            }})</span>
+                                    </span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper mySwiper phase-2">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide" *ngIf="currentDiv === 'physicalexerciseDiv'">
+                        <div class="ques-box p-0 bg_none">
+                            <div class="row">
+                                <div class="col-md-6 padd_left">
+                                    <div class="left">
+                                        <p class="question">1. How would you describe overall fitness levels of you and
+                                            Your Family</p>
+                                        <div class="option-box2">
+                                            <!-- <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '5-10 lakhs'"
+                                                (click)="incomeRange('5-10 lakhs', 1)">5-10 lakhs</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '10-20 lakhs'"
+                                                (click)="incomeRange('10-20 lakhs', 2)">10-20 lakhs</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '20-40 lakhs'"
+                                                (click)="incomeRange('20-40 lakhs', 3)">20-40 lakhs</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '40 lakhs and above'"
+                                                (click)="incomeRange('40 lakhs and above', 4)">40 lakhs and
+                                                above</button> -->
+                                            <button class="btn rangeBtn"
+                                                [class.active]="physicalExercise == 'Fit and Healthy'"
+                                                (click)="selectOption('Fit and Healthy')">Fit and Healthy</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="physicalExercise == 'Somewhat Overweight'"
+                                                (click)="selectOption('Somewhat Overweight')">Somewhat
+                                                Overweight</button>
+                                            <button class="btn rangeBtn" [class.active]="physicalExercise == 'Obese'"
+                                                (click)="selectOption('Obese')">Obese</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="physicalExercise == 'Underweight'"
+                                                (click)="selectOption('Underweight')">Underweight</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padd_right">
+                                    <div class="right layout-1">
+                                        <h4 class="heading">Can fitness levels and exercise related health benefits
+                                            impact insurance coverage?</h4>
+                                        <p class="text">Engaging in regular exercise and physical activity can
+                                            contribute to overall health and well-being, potentially reducing the
+                                            likelihood of needing medical treatment. Insurers may offer coverage options
+                                            that incentivize and support healthy lifestyle choices, including exercise
+                                            programs or wellness benefits.</p>
+                                        <div class="tiger">
+                                            <img src="./assets/images/layout_4.png" class="img-fluid pb-3" alt="tiger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" *ngIf="currentDiv === 'alcoholDiv'">
+                        <div class="ques-box p-0 bg_none">
+                            <div class="row">
+                                <div class="col-md-6 padd_left">
+                                    <div class="left">
+                                        <p class="question">2. Do you or anyone in your family consume alcohol?</p>
+                                        <div class="option-box2">
+                                            <button class="btn rangeBtn" [class.active]="AlcoholAns == '1'"
+                                                (click)="selectAlcohol('1')">Yes</button>
+                                            <button class="btn rangeBtn" [class.active]="AlcoholAns == '0'"
+                                                (click)="selectAlcohol('0')">No</button>
+                                        </div>
+                                        <div class="disease" *ngIf="showAlcoholMembers">
+                                            <p class="a_txt">Choose from the selected member(s) who consume alcohol:</p>
+                                            <div class="users">
+                                                <ul class="user_li">
+                                                    <li class="user" *ngFor="let member of finalInsureOptionsKeys">
+                                                        <div class="user_wrapper">
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    [id]="member" [(ngModel)]="AlcoholMembers[member]"
+                                                                    [checked]="AlcoholMembers[member]==true"
+                                                                    (change)="checkboxChangedAlcohol(member)">
+                                                                <label class="form-check-label" [for]="member">{{
+                                                                    formatMemberNames((member == 'son' && s_count > 1) ? 'son 1' : (member == 'daughter' && d_count > 1) ? 'daughter 1' : member) }}</label>
+                                                            </div>
+                                                            <div class="chips" *ngIf="AlcoholMembers[member]==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency(member, 'daily')"
+                                                                    (click)="alcoholMemberFrequency(member,'daily')">Daily</button>
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency(member, 'sometimes')"
+                                                                    (click)="alcoholMemberFrequency(member,'sometimes')">Sometimes</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="s_count>1">
+                                                        <div class="user_wrapper">
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Son 2" [(ngModel)]="AlcoholMembers.son2"
+                                                                    [checked]="AlcoholMembers.son2==true"
+                                                                    (change)="checkboxChangedAlcohol('son2')">
+                                                                <label class="form-check-label" for="Son 2">son
+                                                                    2</label>
+                                                            </div>
+                                                            <div class="chips" *ngIf="AlcoholMembers['son2']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('son2', 'daily')"
+                                                                    (click)="alcoholMemberFrequency('son2','daily')">Daily</button>
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('son2', 'sometimes')"
+                                                                    (click)="alcoholMemberFrequency('son2','sometimes')">Sometimes</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="s_count>2">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Son 3" [(ngModel)]="AlcoholMembers.son3"
+                                                                    [checked]="AlcoholMembers.son3==true"
+                                                                    (change)="checkboxChangedAlcohol('son3')">
+                                                                <label class="form-check-label" for="Son 3">son
+                                                                    3</label>
+                                                            </div>
+                                                            <div class="chips" *ngIf="AlcoholMembers['son3']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('son3', 'daily')"
+                                                                    (click)="alcoholMemberFrequency('son3','daily')">Daily</button>
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('son3', 'sometimes')"
+                                                                    (click)="alcoholMemberFrequency('son3','sometimes')">Sometimes</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="d_count>1">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="daughter 2"
+                                                                    [(ngModel)]="AlcoholMembers.daughter2"
+                                                                    [checked]="AlcoholMembers.daughter2==true"
+                                                                    (change)="checkboxChangedAlcohol('daughter2')">
+                                                                <label class="form-check-label"
+                                                                    for="daughter 2">daughter
+                                                                    2</label>
+                                                            </div>
+                                                            <div class="chips"
+                                                                *ngIf="AlcoholMembers['daughter2']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('daughter2', 'daily')"
+                                                                    (click)="alcoholMemberFrequency('daughter2','daily')">Daily</button>
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('daughter2', 'sometimes')"
+                                                                    (click)="alcoholMemberFrequency('daughter2','sometimes')">Sometimes</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="d_count>2">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="daughter 3"
+                                                                    [(ngModel)]="AlcoholMembers.daughter3"
+                                                                    [checked]="AlcoholMembers.daughter3==true"
+                                                                    (change)="checkboxChangedAlcohol('daughter3')">
+                                                                <label class="form-check-label"
+                                                                    for="daughter 3">daughter
+                                                                    3</label>
+                                                            </div>
+                                                            <div class="chips"
+                                                                *ngIf="AlcoholMembers['daughter3']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('daughter3', 'daily')"
+                                                                    (click)="alcoholMemberFrequency('daughter3','daily')">Daily</button>
+                                                                <button class="btn"
+                                                                    [class.active]="isAlcoholFrequency('daughter3', 'sometimes')"
+                                                                    (click)="alcoholMemberFrequency('daughter3','sometimes')">Sometimes</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <small *ngIf="errorNoAlcoholCheckboxSelected" class="error-message"
+                                                style="color: red;">
+                                                Please specify which member.
+                                            </small>
+
+                                            <small *ngIf="errorNoAlcoholFrequencySelected" class="error-message"
+                                                style="color: red;">
+                                                Please select intake frequency.
+                                            </small>
+
+                                            <div class="submit_btn">
+                                                <button class="btn" (click)="selectAlcoholMembers()"
+                                                    id="submit1">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padd_right">
+                                    <div class="right layout-1">
+                                        <h4 class="heading">How does alcohol consumption influence health insurance
+                                            premium?</h4>
+                                        <p class="text">Alcohol consumption is associated with various health risks,
+                                            including liver disease, cardiovascular issues, and mental health disorders.
+                                            Individuals who consume alcohol may have a higher likelihood of developing
+                                            these conditions, leading to increased healthcare costs and subsequently
+                                            higher insurance premiums.</p>
+                                        <div class="tiger">
+                                            <img src="./assets/images/layout_5.png" class="img-fluid pb-3" alt="tiger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" *ngIf="currentDiv === 'tobaccoDiv'">
+                        <div class="ques-box p-0 bg_none">
+                            <div class="row">
+                                <div class="col-md-6 padd_left">
+                                    <div class="left">
+                                        <p class="question">3. Do you or anyone in your family smoke or use tobacco
+                                            products?</p>
+                                        <div class="option-box2">
+                                            <button class="btn rangeBtn" [class.active]="TobaccoAns == '1'"
+                                                (click)="selectTobacco('1')">Yes</button>
+                                            <button class="btn rangeBtn" [class.active]="TobaccoAns == '0'"
+                                                (click)="selectTobacco('0')">No</button>
+                                        </div>
+                                        <div class="disease" *ngIf="showTobaccoMembers">
+                                            <p class="a_txt">Choose from the selected member(s) who smokes or uses
+                                                tobacco products:</p>
+                                            <div class="users">
+                                                <ul class="user_li">
+                                                    <li class="user" *ngFor="let member of finalInsureOptionsKeys">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    [id]="member" [(ngModel)]="TobaccoMembers[member]"
+                                                                    [checked]="TobaccoMembers[member]==true"
+                                                                    (change)="checkboxChangedTobacco(member)">
+                                                                <label class="form-check-label" [for]="member">{{
+                                                                    formatMemberNames((member == 'son' && s_count > 1) ? 'son 1' : (member == 'daughter' && d_count > 1) ? 'daughter 1' : member) }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="s_count>1">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Son 2" [(ngModel)]="TobaccoMembers.son2"
+                                                                    [checked]="TobaccoMembers.son2==true"
+                                                                    (change)="checkboxChangedTobacco('son2')">
+                                                                <label class="form-check-label" for="Son 2">son
+                                                                    2</label>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="s_count>2">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Son 3" [(ngModel)]="TobaccoMembers.son3"
+                                                                    [checked]="TobaccoMembers.son3==true"
+                                                                    (change)="checkboxChangedTobacco('son3')">
+                                                                <label class="form-check-label" for="Son 3">son
+                                                                    3</label>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="d_count>1">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="daughter 2"
+                                                                    [(ngModel)]="TobaccoMembers.daughter2"
+                                                                    [checked]="TobaccoMembers.daughter2==true"
+                                                                    (change)="checkboxChangedTobacco('daughter2')">
+                                                                <label class="form-check-label"
+                                                                    for="daughter 2">daughter
+                                                                    2</label>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user" *ngIf="d_count>2">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="daughter 3"
+                                                                    [(ngModel)]="TobaccoMembers.daughter3"
+                                                                    [checked]="TobaccoMembers.daughter3==true"
+                                                                    (change)="checkboxChangedTobacco('daughter3')">
+                                                                <label class="form-check-label"
+                                                                    for="daughter 3">daughter
+                                                                    3</label>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <small *ngIf="errorNoTobaccoCheckboxSelected" class="error-message"
+                                                style="color: red;">
+                                                Please specify which member.
+                                            </small>
+                                            <!-- <small *ngIf="errorNoTobaccoFrequencySelected" class="error-message"
+                                                style="color: red;">
+                                                Please select frequency for each family member.
+                                            </small> -->
+                                            <div class="submit_btn">
+                                                <button class="btn" (click)="selectTobaccoMembers()"
+                                                    id="submit2">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padd_right">
+                                    <div class="right layout-1">
+                                        <h4 class="heading">Choose from the selected family members who smokes or uses
+                                            tobacco products:</h4>
+                                        <p class="text">Smoking/Tobacco usage raises insurance premiums due to health
+                                            risks, like lung cancer and heart disease. Some insurers offer discounts for
+                                            non-smokers or those who quit. Therefore, insurance premiums depends upon
+                                            the underwriting criteria and your personal health history.</p>
+                                        <div class="tiger">
+                                            <img src="./assets/images/layout_6.png" class="img-fluid pb-3" alt="tiger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" *ngIf="currentDiv === 'medicalhistoryDiv' && medicalhistory==1">
+                        <div class="ques-box p-0 bg_none">
+                            <div class="row">
+                                <div class="col-md-6 padd_left">
+                                    <div class="left">
+                                        <p class="question">4. Any medical history beyond cold or fever?
+                                        </p>
+                                        <div class="option-box2">
+                                            <button [class.active]="MedicalAns == '1'" class="btn rangeBtn"
+                                                (click)="selectMedicalHistory('1')">Yes</button>
+                                            <button [class.active]="MedicalAns == '0'" class="btn rangeBtn"
+                                                (click)="selectMedicalHistory('0')">No</button>
+                                        </div>
+                                        <div class="disease" *ngIf="showMedicalMembers">
+                                            <p class="a_txt">Choose from the selected family members who have a medical
+                                                history:</p>
+                                            <div class="users">
+                                                <ul class="user_li">
+                                                    <li class="user w-100"
+                                                        *ngFor="let member of finalInsureOptionsKeys">
+                                                        <div class="user_wrapper">
+
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    [id]="member" [(ngModel)]="MedicalMembers[member]"
+                                                                    [checked]="MedicalMembers[member]==true"
+                                                                    (change)="checkboxChanged(member)">
+                                                                <label class="form-check-label" [for]="member">{{
+                                                                    formatMemberNames((member == 'son' && s_count > 1) ? 'son 1' : (member == 'daughter' && d_count > 1) ? 'daughter 1' : member) }}</label>
+                                                            </div>
+
+                                                            <div class="chips" *ngIf="MedicalMembers[member]==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected(member, 'diabetes')"
+                                                                    (click)="toggleSelection(member, 'diabetes',2)">Diabetes</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected(member, 'hypertension')"
+                                                                    (click)="toggleSelection(member, 'hypertension',3)">Hypertension</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected(member, 'heart disease')"
+                                                                    (click)="toggleSelection(member, 'heart disease',3)">Heart
+                                                                    Disease</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected(member, 'cancer')"
+                                                                    (click)="toggleSelection(member, 'cancer',4)">Cancer</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected(member, 'others')"
+                                                                    (click)="toggleSelection(member, 'others',1)">Others</button>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="user w-100" *ngIf="s_count>1">
+                                                        <div class="user_wrapper">
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Son 2" [(ngModel)]="MedicalMembers.son2"
+                                                                    [checked]="MedicalMembers.son2==true"
+                                                                    (change)="checkboxChanged('son2')">
+                                                                <label class="form-check-label" for="Son 2">son
+                                                                    2</label>
+                                                            </div>
+                                                            <div class="chips" *ngIf="MedicalMembers['son2']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son2', 'diabetes')"
+                                                                    (click)="toggleSelection('son2', 'diabetes',2)">Diabetes</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son2', 'hypertension')"
+                                                                    (click)="toggleSelection('son2', 'hypertension',3)">Hypertension</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son2', 'heart disease')"
+                                                                    (click)="toggleSelection('son2', 'heart disease',3)">Heart
+                                                                    Disease</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son2', 'cancer')"
+                                                                    (click)="toggleSelection('son2', 'cancer',4)">Cancer</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son2', 'others')"
+                                                                    (click)="toggleSelection('son2', 'others',1)">Others</button>
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user w-100" *ngIf="s_count>2">
+                                                        <div class="user_wrapper">
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Son 3" [(ngModel)]="MedicalMembers.son3"
+                                                                    [checked]="MedicalMembers.son3==true"
+                                                                    (change)="checkboxChanged('son3')">
+                                                                <label class="form-check-label" for="Son 3">son
+                                                                    3</label>
+                                                            </div>
+                                                            <div class="chips" *ngIf="MedicalMembers['son3']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son3', 'diabetes')"
+                                                                    (click)="toggleSelection('son3', 'diabetes',2)">Diabetes</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son3', 'hypertension')"
+                                                                    (click)="toggleSelection('son3', 'hypertension',3)">Hypertension</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son3', 'heart disease')"
+                                                                    (click)="toggleSelection('son3', 'heart disease',3)">Heart
+                                                                    Disease</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son3', 'cancer')"
+                                                                    (click)="toggleSelection('son3', 'cancer',4)">Cancer</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('son3', 'others')"
+                                                                    (click)="toggleSelection('son3', 'others',1)">Others</button>
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user w-100" *ngIf="d_count>1">
+                                                        <div class="user_wrapper">
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Daughter 2"
+                                                                    [(ngModel)]="MedicalMembers.daughter2"
+                                                                    [checked]="MedicalMembers.daughter2==true"
+                                                                    (change)="checkboxChanged('daughter2')">
+                                                                <label class="form-check-label"
+                                                                    for="Daughter 2">daughter
+                                                                    2</label>
+                                                            </div>
+                                                            <div class="chips"
+                                                                *ngIf="MedicalMembers['daughter2']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter2', 'diabetes')"
+                                                                    (click)="toggleSelection('daughter2', 'diabetes',2)">Diabetes</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter2', 'hypertension')"
+                                                                    (click)="toggleSelection('daughter2', 'hypertension',3)">Hypertension</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter2', 'heart disease')"
+                                                                    (click)="toggleSelection('daughter2', 'heart disease',3)">Heart
+                                                                    Disease</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter2', 'cancer')"
+                                                                    (click)="toggleSelection('daughter2', 'cancer',4)">Cancer</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter2', 'others')"
+                                                                    (click)="toggleSelection('daughter2', 'others',1)">Others</button>
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="user w-100" *ngIf="d_count>2">
+                                                        <div class="user_wrapper">
+                                                            <div class="form-group form-check mb-0">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="Daughter 3"
+                                                                    [(ngModel)]="MedicalMembers.daughter3"
+                                                                    [checked]="MedicalMembers.daughter3==true"
+                                                                    (change)="checkboxChanged('daughter3')">
+                                                                <label class="form-check-label"
+                                                                    for="Daughter 3">daughter
+                                                                    3</label>
+                                                            </div>
+                                                            <div class="chips"
+                                                                *ngIf="MedicalMembers['daughter3']==true">
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter3', 'diabetes')"
+                                                                    (click)="toggleSelection('daughter3', 'diabetes',2)">Diabetes</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter3', 'hypertension')"
+                                                                    (click)="toggleSelection('daughter3', 'hypertension',3)">Hypertension</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter3', 'heart disease')"
+                                                                    (click)="toggleSelection('daughter3', 'heart disease',3)">Heart
+                                                                    Disease</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter3', 'cancer')"
+                                                                    (click)="toggleSelection('daughter3', 'cancer',4)">Cancer</button>
+
+                                                                <button class="btn"
+                                                                    [class.active]="isSelected('daughter3', 'others')"
+                                                                    (click)="toggleSelection('daughter3', 'others',1)">Others</button>
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <small *ngIf="errorNoMedicalCheckboxSelected" class="error-message"
+                                                    style="color: red;">
+                                                    Please specify which member.
+                                                </small>
+                                                <small *ngIf="errorNoDiseaseSelected" class="error-message"
+                                                    style="color: red;">
+                                                    Please select one of the pre-existing diseases, if answered Yes.
+                                                </small>
+                                            </div>
+                                            <div class="next_btn pb-0 pt-4">
+                                                <button class="btn" id="lifestylenextBTN"
+                                                    (click)="finalsubmit()">Continue</button>
+                                            </div>
+                                            <!-- <div class="submit_btn">
+                                                <button class="btn" (click)="selectMedicalMembers()">Submit</button>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 padd_right">
+                                    <div class="right layout-1">
+                                        <h4 class="heading">Does anyone in your family, including yourself, have a
+                                            pre-existing disease?</h4>
+                                        <p class="text">Declaring pre-existing diseases ensures transparency, prevents
+                                            claim denial, and allows tailored coverage. It helps assess accurate risk
+                                            for fair premiums and provides necessary support for healthcare needs.</p>
+                                        <div class="tiger">
+                                            <img src="./assets/images/layout_7.png" class="img-fluid pb-3" alt="tiger">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-6 padd_right" *ngIf="MemberDisease">
+                                    <div class="right_condition">
+                                        <p class="text">
+                                            Please specify the diagnosed medical condition(s)
+                                        </p>
+                                        <div class="user_box_wrapper"> 
+                                            <div class="user_box" *ngIf="MedicalMembers['self']">
+                                                <p class="user_txt">Self</p>
+                                                <div class="chips">
+                                                    <button class="btn" [class.active]="isSelected('self', 'diabetes')"
+                                                        (click)="toggleSelection('self', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('self', 'hypertension')"
+                                                        (click)="toggleSelection('self', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('self', 'heart disease')"
+                                                        (click)="toggleSelection('self', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn" [class.active]="isSelected('self', 'cancer')"
+                                                        (click)="toggleSelection('self', 'cancer',4)">Cancer</button>
+                                                    <button class="btn" [class.active]="isSelected('self', 'others')"
+                                                        (click)="toggleSelection('self', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="user_box" *ngIf="MedicalMembers['spouse']">
+                                                <p class="user_txt">Spouse</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('spouse', 'diabetes')"
+                                                        (click)="toggleSelection('spouse', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('spouse', 'hypertension')"
+                                                        (click)="toggleSelection('spouse', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('spouse', 'heart disease')"
+                                                        (click)="toggleSelection('spouse', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn" [class.active]="isSelected('spouse', 'cancer')"
+                                                        (click)="toggleSelection('spouse', 'cancer',4)">Cancer</button>
+                                                    <button class="btn" [class.active]="isSelected('spouse', 'others')"
+                                                        (click)="toggleSelection('spouse', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['father']">
+                                                <p class="user_txt">Father</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('father', 'diabetes')"
+                                                        (click)="toggleSelection('father', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('father', 'hypertension')"
+                                                        (click)="toggleSelection('father', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('father', 'heart disease')"
+                                                        (click)="toggleSelection('father', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn" [class.active]="isSelected('father', 'cancer')"
+                                                        (click)="toggleSelection('father', 'cancer',4)">Cancer</button>
+                                                    <button class="btn" [class.active]="isSelected('father', 'others')"
+                                                        (click)="toggleSelection('father', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['mother']">
+                                                <p class="user_txt">Mother</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('mother', 'diabetes')"
+                                                        (click)="toggleSelection('mother', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('mother', 'hypertension')"
+                                                        (click)="toggleSelection('mother', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('mother', 'heart disease')"
+                                                        (click)="toggleSelection('mother', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn" [class.active]="isSelected('mother', 'cancer')"
+                                                        (click)="toggleSelection('mother', 'cancer',4)">Cancer</button>
+                                                    <button class="btn" [class.active]="isSelected('mother', 'others')"
+                                                        (click)="toggleSelection('mother', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['son']">
+                                                <p class="user_txt">Son</p>
+                                                <div class="chips">
+                                                    <button class="btn" [class.active]="isSelected('son', 'diabetes')"
+                                                        (click)="toggleSelection('son', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('son', 'hypertension')"
+                                                        (click)="toggleSelection('son', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('son', 'heart disease')"
+                                                        (click)="toggleSelection('son', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn" [class.active]="isSelected('son', 'cancer')"
+                                                        (click)="toggleSelection('son', 'cancer',4)">Cancer</button>
+                                                    <button class="btn" [class.active]="isSelected('son', 'others')"
+                                                        (click)="toggleSelection('son', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['son2']">
+                                                <p class="user_txt">Son 2</p>
+                                                <div class="chips">
+                                                    <button class="btn" [class.active]="isSelected('son2', 'diabetes')"
+                                                        (click)="toggleSelection('son2', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('son2', 'hypertension')"
+                                                        (click)="toggleSelection('son2', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('son2', 'heart disease')"
+                                                        (click)="toggleSelection('son2', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn" [class.active]="isSelected('son2', 'cancer')"
+                                                        (click)="toggleSelection('son2', 'cancer',4)">Cancer</button>
+                                                    <button class="btn" [class.active]="isSelected('son2', 'others')"
+                                                        (click)="toggleSelection('son2', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['son3']">
+                                                <p class="user_txt">Son 3</p>
+                                                <div class="chips">
+                                                    <button class="btn" [class.active]="isSelected('son3', 'diabetes')"
+                                                        (click)="toggleSelection('son3', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('son3', 'hypertension')"
+                                                        (click)="toggleSelection('son3', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('son3', 'heart disease')"
+                                                        (click)="toggleSelection('son3', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn" [class.active]="isSelected('son3', 'cancer')"
+                                                        (click)="toggleSelection('son3', 'cancer',4)">Cancer</button>
+                                                    <button class="btn" [class.active]="isSelected('son3', 'others')"
+                                                        (click)="toggleSelection('son3', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['daughter']">
+                                                <p class="user_txt">Daughter</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter', 'diabetes')"
+                                                        (click)="toggleSelection('daughter', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter', 'hypertension')"
+                                                        (click)="toggleSelection('daughter', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter', 'heart disease')"
+                                                        (click)="toggleSelection('daughter', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter', 'cancer')"
+                                                        (click)="toggleSelection('daughter', 'cancer',4)">Cancer</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter', 'others')"
+                                                        (click)="toggleSelection('daughter', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['daughter2']">
+                                                <p class="user_txt">Daughter 2</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter2', 'diabetes')"
+                                                        (click)="toggleSelection('daughter2', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter2', 'hypertension')"
+                                                        (click)="toggleSelection('daughter2', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter2', 'heart disease')"
+                                                        (click)="toggleSelection('daughter2', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter2', 'cancer')"
+                                                        (click)="toggleSelection('daughter2', 'cancer',4)">Cancer</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter2', 'others')"
+                                                        (click)="toggleSelection('daughter2', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['daughter3']">
+                                                <p class="user_txt">Daughter 3</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter3', 'diabetes')"
+                                                        (click)="toggleSelection('daughter3', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter3', 'hypertension')"
+                                                        (click)="toggleSelection('daughter3', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter3', 'heart disease')"
+                                                        (click)="toggleSelection('daughter3', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter3', 'cancer')"
+                                                        (click)="toggleSelection('daughter3', 'cancer',4)">Cancer</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('daughter3', 'others')"
+                                                        (click)="toggleSelection('daughter3', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['grandFather']">
+                                                <p class="user_txt">Grand Father</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandFather', 'diabetes')"
+                                                        (click)="toggleSelection('grandFather', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandFather', 'hypertension')"
+                                                        (click)="toggleSelection('grandFather', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandFather', 'heart disease')"
+                                                        (click)="toggleSelection('grandFather', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandFather', 'cancer')"
+                                                        (click)="toggleSelection('grandFather', 'cancer',4)">Cancer</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandFather', 'others')"
+                                                        (click)="toggleSelection('grandFather', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['grandMother']">
+                                                <p class="user_txt">Grand Mother</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandMother', 'diabetes')"
+                                                        (click)="toggleSelection('grandMother', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandMother', 'hypertension')"
+                                                        (click)="toggleSelection('grandMother', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandMother', 'heart disease')"
+                                                        (click)="toggleSelection('grandMother', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandMother', 'cancer')"
+                                                        (click)="toggleSelection('grandMother', 'cancer',4)">Cancer</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('grandMother', 'others')"
+                                                        (click)="toggleSelection('grandMother', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['fatherInLaw']">
+                                                <p class="user_txt">Father In Law</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('fatherInLaw', 'diabetes')"
+                                                        (click)="toggleSelection('fatherInLaw', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('fatherInLaw', 'hypertension')"
+                                                        (click)="toggleSelection('fatherInLaw', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('fatherInLaw', 'heart disease')"
+                                                        (click)="toggleSelection('fatherInLaw', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('fatherInLaw', 'cancer')"
+                                                        (click)="toggleSelection('fatherInLaw', 'cancer',4)">Cancer</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('fatherInLaw', 'others')"
+                                                        (click)="toggleSelection('fatherInLaw', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <div class="user_box" *ngIf="MedicalMembers['motherInLaw']">
+                                                <p class="user_txt">Mother In Law</p>
+                                                <div class="chips">
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('motherInLaw', 'diabetes')"
+                                                        (click)="toggleSelection('motherInLaw', 'diabetes',2)">Diabetes</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('motherInLaw', 'hypertension')"
+                                                        (click)="toggleSelection('motherInLaw', 'hypertension',3)">Hypertension</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('motherInLaw', 'heart disease')"
+                                                        (click)="toggleSelection('motherInLaw', 'heart disease',3)">Heart
+                                                        Disease</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('motherInLaw', 'cancer')"
+                                                        (click)="toggleSelection('motherInLaw', 'cancer',4)">Cancer</button>
+                                                    <button class="btn"
+                                                        [class.active]="isSelected('motherInLaw', 'others')"
+                                                        (click)="toggleSelection('motherInLaw', 'others',1)">Others</button>
+                                                </div>
+                                            </div>
+                                            <small *ngIf="errorNoMedicalCheckboxSelected" class="error-message"
+                                                style="color: red;">
+                                                Please select at least one family member with a medical history.
+                                            </small>
+                                            <small *ngIf="errorNoDiseaseSelected" class="error-message"
+                                                style="color: red;">
+                                                Please select at least one disease for selected family member.
+                                            </small>
+                                        </div>
+
+                                        <div class="submit_btn">
+                                            <button class="btn" (click)="finalsubmit()">Submit</button>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div *ngFor="let memberType of memberTypes; let i = index" [ngClass]="{ 'hidden': i !== currentFormIndex }">
+                <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm,i)">
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="ques-box">
+                                    <p class="question" #memberType>Insured Family Details ({{
+                                        capitalizeAndAddSpace(memberType) }})</p>
+
+                                    <span class="small">Fill the mentioned details below</span>
+                                    <div class="row details">
+                                        <div *ngIf="i === 0" class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="fullname">
+                                                    {{
+                                                    memberType === 'self' ? 'Enter your Full Name' :
+                                                    memberType.startsWith('son') ? 'Enter your son\'s name' :
+                                                    memberType.startsWith('daughter') ? 'Enter your daughter\'s name' :
+                                                    'Enter your ' + memberType+'\'s' + ' name'
+                                                    }}
+                                                </label>
+
+                                                <input type="text" class="form-control" id="fullname"
+                                                    (keypress)="alphaOnly($event)" (blur)="removeErrorMsg('name', i)"
+                                                    placeholder="Eg: Rahul Sharma" name="fullname{{i}}" ngModel>
+
+                                                <small style="color: red;"
+                                                    *ngIf="nameValidateMessage[i] == 'lengthError'">
+                                                    Invalid full name
+                                                </small>
+                                                <small style="color: red;" *ngIf="nameValidateMessage[i] == 'required'">
+
+                                                    {{
+                                                    memberType === 'self' ? 'Please enter your full name' :
+                                                    memberType.startsWith('son') ? 'Please enter your son\'s name' :
+                                                    memberType.startsWith('daughter') ? 'Please enter your daughter\'s
+                                                    name' :
+                                                    'Please enter your ' + memberType+'\'s' + ' name'
+                                                    }}
+
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="age">
+
+                                                    {{
+                                                    memberType === 'self' ? 'Enter your Age (in years)' :
+                                                    memberType.startsWith('son') ? 'Enter your son\'s age' :
+                                                    memberType.startsWith('daughter') ? 'Enter your daughter\'s age' :
+                                                    'Enter your ' + memberType+'\'s' + ' age (in years)'
+                                                    }}
+
+                                                </label>
+                                                <input type="text" class="form-control" id="dob" placeholder="Eg: 36"
+                                                    maxlength="2" (keypress)="numbersOnly($event)" name="age{{i}}"
+                                                    ngModel (blur)="removeErrorMsg('age', i)">
+
+                                                <div class="age-select-wrapper"
+                                                    *ngIf="memberType === 'son1' || memberType === 'son2' || memberType === 'son3' ||memberType === 'daughter1' || memberType === 'daughter2' || memberType === 'daughter3'">
+
+                                                    <select class="age-select"
+                                                        *ngIf="memberType === 'son1' || memberType === 'son2' || memberType === 'son3' ||memberType === 'daughter1' || memberType === 'daughter2' || memberType === 'daughter3'"
+                                                        id="exampleFormControlSelect1" name="ageType{{i}}"
+                                                        [(ngModel)]="ageType" (click)="selectAgeType('ageType', i)">
+                                                        <option>Years</option>
+                                                        <option>Months</option>
+                                                    </select>
+                                                </div>
+
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'minAgeChild'">
+                                                    Minimum Age for child is 3 months
+                                                </small>
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'maxAgeChild'">
+                                                    Maximum age for child is 30 years
+                                                </small>
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'monthAgeChild'">
+                                                    Select age in years for child older than 12 months
+                                                </small>
+
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'minAgeAdult'">
+                                                    Minimum Age should be 18 Years
+                                                </small>
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'minAgeParent'">
+                                                    Minimum Age should be 36 years
+                                                </small>
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'minAgeGrand'">
+                                                    Minimum Age should be 54 years
+                                                </small>
+
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'child-parentComparison' || ageValidateMessage[i]=='self-childComparison' || ageValidateMessage[i]=='spouse-childComparison'|| ageValidateMessage[i]=='self-fmComparison' || ageValidateMessage[i]=='spouse-inlawComparison' || ageValidateMessage[i]=='otherAdult-fmComparison' || ageValidateMessage[i]=='fm-selfComparison' || ageValidateMessage[i]=='fm-otherAdultComparison' || ageValidateMessage[i]=='fm-grandComparison' || ageValidateMessage[i]=='inLaw-spouseComparison' ||  ageValidateMessage[i]=='grand-fmComparison'">
+                                                    Minimum age gap between {{member1forValidation}} and
+                                                    {{member2forValidation}} should be 18 years
+                                                </small>
+
+                                                <small style="color: red;"
+                                                    *ngIf="ageValidateMessage[i] == 'self-grandComparison' || ageValidateMessage[i] =='otherAdult-grandComparison' || ageValidateMessage[i] =='grand-selfComparison' || ageValidateMessage[i] =='grand-otherAdultComparison'">
+                                                    Minimum age gap between {{member1forValidation}} and
+                                                    {{member2forValidation}} should be 36 years
+                                                </small>
+
+                                                <small style="color: red;" *ngIf="ageValidateMessage[i] == 'required'">
+
+                                                    {{
+                                                    memberType === 'self' ? 'Please enter your age' :
+                                                    memberType.startsWith('son') ? 'Please enter your son\'s age' :
+                                                    memberType.startsWith('daughter') ? 'Please enter your daughter\'s
+                                                    age' :
+                                                    'Please enter your ' + memberType+'\'s' + ' age'
+                                                    }}
+
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group" *ngIf="medicalhistory===1">
+                                                <label for="exampleFormControlSelect1">{{ memberType === 'self' ? 'Do
+                                                    you have any pre-existing diseases?' :
+                                                    'Any pre-existing diseases?' }}</label>
+                                                <div class="form-group custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        name="preExisting{{i}}" [(ngModel)]="preExisting"
+                                                        (click)="selectPreExisting('preExisting', i)">
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                    <div class="chips" *ngIf="preExisting === 'Yes'">
+                                                        <button class="btn"
+                                                            [class.active]="selectedDiseases.includes('Diabetes')"
+                                                            (click)="toggleDisease('Diabetes',2, $event) ; removeErrorMsg('preExisting', i)">Diabetes</button>
+                                                        <button class="btn"
+                                                            [class.active]="selectedDiseases.includes('Hypertension')"
+                                                            (click)="toggleDisease('Hypertension',3, $event) ; removeErrorMsg('preExisting', i)">Hypertension</button>
+                                                        <button class="btn"
+                                                            [class.active]="selectedDiseases.includes('Heart Disease')"
+                                                            (click)="toggleDisease('Heart Disease',4, $event) ; removeErrorMsg('preExisting', i)">Heart
+                                                            Disease</button>
+                                                        <button class="btn"
+                                                            [class.active]="selectedDiseases.includes('Other Disease')"
+                                                            (click)="toggleDisease('Other Disease',1, $event) ; removeErrorMsg('preExisting', i)">Other
+                                                            Disease</button>
+                                                    </div>
+                                                    <small style="color: red;"
+                                                        *ngIf="preExistingDiseaseValidateMessage[i] == 'required'">
+                                                        Please select at-least one pre-existing diseases
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="next_btn">
+                            <button class="btn" id="lifestylenextBTN"
+                                (click)="checkValidationMsg(myForm, currentFormIndex)">Continue</button>
+                        </div>
+                        <div class="error d-none">
+                            <p class="text">Please select any option to proceed</p>
+                        </div>
+                    </div>
+                </form>
+            </div> -->
+        </div>
+    </div>
+</section>
+<!-- popup added -->
+<div class="awesome" id="awesome">
+    <img src="./assets/images/tiger2.webp" class="img-fluid success" alt="awesome">
+</div>
+<!-- popup added -->

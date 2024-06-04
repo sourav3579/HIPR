@@ -1,0 +1,335 @@
+.workspace .workspace-container-wrapper .swiper .swiper-slide .loader {
+    position: relative;
+    text-align: center;
+}
+
+.workspace .workspace-container-wrapper .swiper .swiper-slide .loader .content {
+    position: relative;
+    height: 238px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #FFF3C2 0.42%, rgba(243, 242, 238, 0.00) 99.58%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 52px;
+}
+
+.workspace .workspace-container-wrapper .swiper .swiper-slide .loader .content .title {
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    /* 120% */
+}
+
+.workspace .workspace-container-wrapper .swiper .swiper-slide .loader .content .text {
+    color: #333846;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 171.429% */
+}
+
+.workspace .workspace-container-wrapper .swiper .swiper-slide .loader .loadergif {
+    width: 30%;
+    margin: auto;
+    position: relative;
+    transform: translateY(-6rem);
+}
+
+
+.errormsg {
+    color: #DA2128;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 8px 0px;
+    display: block;
+    font-weight: 500;
+}
+
+.awesome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+}
+
+.awesome .success {
+    width: 30%;
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+    .dashboard {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard .sidemenu,
+    .workspace {
+        width: 100%;
+    }
+
+    .dashboard .sidemenu.sticky {
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards .card.content {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .dashboard {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard .sidemenu,
+    .workspace {
+        width: 100%;
+    }
+
+    .dashboard .sidemenu .tab {
+        border-bottom: 1px solid #EBEBEB;
+    }
+
+    .workspace {
+        padding: 0px;
+    }
+
+
+    .workspace .workspace-container-wrapper .sub-menu .right,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .right {
+        display: none;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box {
+        padding-top: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn .btn {
+        border-radius: 0px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .question {
+        padding-bottom: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box.tigerimg img {
+        width: 100%;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .family_details .data.member {
+        display: block;
+    }
+
+    .dashboard .sidemenu.sticky {
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards .card.content {
+        width: 20%;
+    }
+
+    .dashboard .sidemenu .tab {
+        display: block;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .dashboard {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard .sidemenu,
+    .workspace {
+        width: 100%;
+    }
+
+    .dashboard .sidemenu .tab {
+        border-bottom: 1px solid #EBEBEB;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .workspace {
+        padding: 0px;
+    }
+
+    .workspace .workspace-container-wrapper .sub-menu .right,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .right,
+    .deskhide {
+        display: none;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box {
+        padding-top: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn {
+        position: fixed;
+        bottom: 0;
+        z-index: 99;
+        padding-bottom: 0;
+    }
+
+    .workspace .workspace-container-wrapper .next_btn .btn {
+        border-radius: 0px;
+        width: 100%;
+        height: 60px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .question {
+        padding-bottom: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box.tigerimg img,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .option-box .btn,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .left .option-box2 .btn,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .left,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .loader .loadergif,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .form-group .rm-box .btn,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .medical_input,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .medical_input .form-control,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right.layout-1,
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .family_details .data {
+        width: 100%;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right.layout-1 {
+        margin-top: 1.25rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .medical_input {
+        margin-bottom: 4rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .family_details .data.member {
+        display: block;
+    }
+
+    .workspace .workspace-container-wrapper {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper,
+    .workspace .workspace-container-wrapper .sub-menu {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper {
+        margin-bottom: 5rem;
+    }
+
+    .workspace .workspace-container-wrapper .report .content {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .gender {
+        margin-bottom: 32px;
+        margin-top: 6px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right {
+        padding-top: 2rem;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .ques-box .right .tiger .img-fluid {
+        margin-bottom: 3rem;
+    }
+
+    /* .workspace .workspace-container-wrapper .swiper .swiper-slide .personal_details .mytable table {
+        width: 38rem;
+    } */
+
+    /* .mm {
+        margin-bottom: 8rem !important;
+    } */
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .bottomimg .web,
+    .workspace .workspace-container-wrapper .sub-menu .left .complete {
+        display: none;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .bottomimg .mobile {
+        display: block;
+    }
+
+    .dashboard .sidemenu.sticky {
+        height: auto !important;
+        margin-bottom: 1rem;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards .card.content {
+        width: 20%;
+    }
+
+    .workspace .workspace-container {
+        padding: 32px 16px 30px 16px;
+    }
+
+    .workspace .workspace-container .family_floater {
+        overflow: auto;
+    }
+
+    .workspace .workspace-container .family_floater .family_cards {
+        flex-wrap: nowrap;
+        width: 54rem;
+    }
+
+    .workspace .workspace-container .target .heading {
+        text-align: left;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .bottomimg {
+        height: 402px;
+        /* padding-top: 0px; */
+        background: url('../../assets/images/verification_imgmon.png') no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 18px;
+    }
+
+    .awesome .success {
+        width: 95%;
+    }
+
+    .dashboard .sidemenu .tab {
+        display: block;
+    }
+
+    .workspace .workspace-container-wrapper .swiper.phase-2 .swiper-slide .bottomimg .verify-heading {
+        color: #9B9B9B;
+        font-size: 16px;
+        padding: 0px 16px;
+    }
+
+    .workspace .workspace-container-wrapper .swiper .swiper-slide .loader .loadergif {
+        width: 60%;
+    }
+}

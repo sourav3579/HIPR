@@ -1,0 +1,869 @@
+<!-- header section -->
+<header class="header-container-wrapper">
+    <div class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6 logo">
+                    <a href="index.html">
+                        <img src="./assets/images/logo.png" alt="BCL" width="210">
+                    </a>
+                </div>
+                <div class="col-md-9 col-6 text-right">
+                    <div class="container">
+                        <div class="row align-items-center mob_hide">
+                            <div class="col-md-8">
+                                <div class="root">
+                                    <div class="order-track">
+                                        <div class="order-track-step active">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <!-- <span class="order-track-status-line"></span> -->
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat"> Basic <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step">
+                                            <div class="order-track-status">
+                                                <span class="order-track-status-dot"></span>
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Lifestyle <span
+                                                        class="deskhide">Details</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="order-track-step">
+                                            <div class="order-track-status">
+                                                <!-- <span class="order-track-status-dot"></span> -->
+                                                <span class="order-track-status-line"></span>
+                                            </div>
+                                            <div class="order-track-text">
+                                                <p class="order-track-text-stat">Confirm <span class="deskhide">your
+                                                        Details</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <div class="complete">
+                                    <p class="heading">25% Completed </p>
+                                    <div class="progressbar">
+                                        <div class="statusBar" style="width: 25%;"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="complete">
+                                <p class="heading">{{progressWidth}} Completed </p>
+                                <div class="progressbar">
+                                    <div class="statusBar" [style.width]="progressWidth"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header section  -->
+
+
+
+
+
+
+
+
+
+
+
+<section class="dashboard">
+    <div class="sidemenu">
+        <div class="tab">
+            <div class="root">
+                <div class="order-track">
+                    <div class="order-track-step active">
+                        <div class="order-track-status">
+                            <!-- <span class="order-track-status-dot"></span>
+                            <span class="order-track-status-line"></span> -->
+                        </div>
+                        <div class="order-track-text">
+                            <p class="order-track-text-stat"> Basic <span class="deskhide">Details</span></p>
+                        </div>
+                    </div>
+                    <div class="order-track-step">
+                        <div class="order-track-status">
+                            <!-- <span class="order-track-status-dot"></span> -->
+                            <span class="order-track-status-line"></span>
+                        </div>
+                        <div class="order-track-text">
+                            <p class="order-track-text-stat">Lifestyle <span class="deskhide">Details</span></p>
+                        </div>
+                    </div>
+                    <div class="order-track-step">
+                        <div class="order-track-status">
+                            <!-- <span class="order-track-status-dot"></span> -->
+                            <span class="order-track-status-line"></span>
+                        </div>
+                        <div class="order-track-text">
+                            <p class="order-track-text-stat">Confirm <span class="deskhide">your Details</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- <div class="order-track-step">
+                        <div class="order-track-status">
+                            <span class="order-track-status-dot"></span>
+                            <span class="order-track-status-line"></span>
+                        </div>
+                        <div class="order-track-text">
+                            <p class="order-track-text-stat">Report</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="family_cards">
+                 <div href="#" class="card" id="member" *ngFor="let member of memberIcons">
+                    <img [src]="'./assets/images/users/' + memberImages[(member.startsWith('son') ? 'son' : (member.startsWith('daughter') ? 'daughter' : member))]+'.png'" class="img-fluid" alt="user">
+                    <span class="text">{{ capitalizeFirstLetter(member) }}
+                        <!-- <span class="son" *ngIf=" memberImages[member] == 3 && insureOptions.son>1">({{insureOptions.son
+                            }})</span>
+                        <span class="daughter"
+                            *ngIf=" memberImages[member] == 4 && insureOptions.daughter>1">({{insureOptions.daughter
+                            }})</span> -->
+                    </span>
+                </div> 
+                 
+                <!-- NEW HTML ADDED 09-03-24 -->
+                <div class="placeholder" *ngIf="selectedMembers.length==0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <path
+                            d="M9.84 24.32C9.61851 24.0823 9.35008 23.8932 9.05171 23.7647C8.75334 23.6362 8.43153 23.571 8.10667 23.5733C7.01334 23.5733 6.18667 24.08 5.65334 25.12C5.12 26.16 5.25334 27.1466 6.10667 28.08C9.25334 30.9066 11.2533 32.9066 12.1067 34.08C13.2 35.5733 13.7333 37.76 13.7333 40.5866C13.7333 44.08 15.0667 46.6666 17.7333 48.4533C19.2267 49.6266 20.8533 50.5066 22.6667 51.0933V40.72C22.6667 38.2133 21.7867 36.1333 20.1067 34.4533M43.8933 34.5866C42.24 36.24 41.3333 38.2933 41.3333 40.72V51.2C43.8933 50.2933 46.0267 48.88 47.7867 47.0133C49.52 45.1466 50.4 43.0933 50.4 40.5866C50.4 37.5733 50.9067 35.4133 51.92 34.08C52.16 33.6533 52.6133 33.12 53.3333 32.4533C53.9467 31.7866 54.5867 31.1466 55.2267 30.56C55.84 30 56.4533 29.4133 57.04 28.8266L57.92 28.08C58.1584 27.8534 58.3477 27.5803 58.4762 27.2775C58.6046 26.9748 58.6694 26.6488 58.6667 26.32C58.6667 25.5733 58.4267 24.9066 57.92 24.3733C57.4133 23.84 56.8 23.5733 56 23.5733C55.2 23.5733 54.6667 23.8133 54.16 24.32M32 53.3333C33.84 53.3333 35.6267 53.0933 37.3333 52.5866V43.0666C37.3333 41.4933 36.8533 40.2666 35.76 39.0933C34.6667 37.92 33.4133 37.3333 32 37.3333C30.5867 37.3333 29.3333 37.8666 28.32 38.96C27.2533 40 26.6667 41.2266 26.6667 42.8266V52.5866C28.3733 53.0933 30.16 53.3333 32 53.3333ZM24 22.6666C24 24.88 22.2133 26.6666 20 26.6666C17.7867 26.6666 16 24.88 16 22.6666C16 20.4533 17.7867 18.6666 20 18.6666C22.2133 18.6666 24 20.4533 24 22.6666ZM48 22.6666C48 24.88 46.2133 26.6666 44 26.6666C41.7867 26.6666 40 24.88 40 22.6666C40 20.4533 41.7867 18.6666 44 18.6666C46.2133 18.6666 48 20.4533 48 22.6666ZM36 14.6666C36 16.88 34.2133 18.6666 32 18.6666C29.7867 18.6666 28 16.88 28 14.6666C28 12.4533 29.7867 10.6666 32 10.6666C34.2133 10.6666 36 12.4533 36 14.6666ZM36 29.3333C36 31.5466 34.2133 33.3333 32 33.3333C29.7867 33.3333 28 31.5466 28 29.3333C28 27.12 29.7867 25.3333 32 25.3333C34.2133 25.3333 36 27.12 36 29.3333Z"
+                            fill="#ABABAB" />
+                    </svg>
+
+                    <p class="text">Your family members will show up here</p>
+                </div>
+                <!-- NEW HTML ADDED 09-03-24 -->
+            </div>
+        </div>
+    </div>
+    <div class="workspace">
+        <span class="right_ele"></span>
+        <div class="tiger-mascot tiger" id="tiger">
+            <a id="previous" class="back " (click)="backBtn()" style="cursor: pointer;"><span
+                    class="material-icons-outlined">
+                    arrow_back_ios
+                </span>{{ stepNumber == 1 ? 'Please fill in the required fields below to proceed.' :
+                'Back' }}</a>
+        </div>
+        <div class="workspace-container-wrapper">
+            <div class="sub-menu" id="sub-menu">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="left">
+                            <!-- <a id="previous" class="back" (click)="backBtn()" style="cursor: pointer;"><span
+                                    class="material-icons-outlined">
+                                    arrow_back_ios
+                                </span>{{ stepNumber == 1 ? 'Please fill in the required fields below to proceed.' :
+                                'Back' }}</a> -->
+                            <!-- <p class="newheading">Please select below details to proceed</p> -->
+                            <!-- <div class="complete">
+                                <p class="heading">{{progressWidth}} Completed </p>
+                                <div class="progressbar">
+                                    <div class="statusBar" [style.width]="progressWidth"></div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="right">
+                            <!-- <div class="family_cards">
+                                <div href="#" class="card" id="member" *ngFor="let member of selectedMembers">
+                                    <img [src]="'./assets/images/users/' + memberImages[member]+'.png'"
+                                        class="img-fluid" alt="user">
+                                    <span class="text">{{ capitalizeFirstLetter(member) }}
+                                        <span class="son"
+                                            *ngIf=" memberImages[member] == 3 && insureOptions.son>1">({{insureOptions.son
+                                            }})</span>
+                                        <span class="daughter"
+                                            *ngIf=" memberImages[member] == 4 && insureOptions.daughter>1">({{insureOptions.daughter
+                                            }})</span>
+                                    </span>
+                                </div>
+                                 
+                                <div class="placeholder" *ngIf="selectedMembers.length==0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
+                                        fill="none">
+                                        <path
+                                            d="M9.84 24.32C9.61851 24.0823 9.35008 23.8932 9.05171 23.7647C8.75334 23.6362 8.43153 23.571 8.10667 23.5733C7.01334 23.5733 6.18667 24.08 5.65334 25.12C5.12 26.16 5.25334 27.1466 6.10667 28.08C9.25334 30.9066 11.2533 32.9066 12.1067 34.08C13.2 35.5733 13.7333 37.76 13.7333 40.5866C13.7333 44.08 15.0667 46.6666 17.7333 48.4533C19.2267 49.6266 20.8533 50.5066 22.6667 51.0933V40.72C22.6667 38.2133 21.7867 36.1333 20.1067 34.4533M43.8933 34.5866C42.24 36.24 41.3333 38.2933 41.3333 40.72V51.2C43.8933 50.2933 46.0267 48.88 47.7867 47.0133C49.52 45.1466 50.4 43.0933 50.4 40.5866C50.4 37.5733 50.9067 35.4133 51.92 34.08C52.16 33.6533 52.6133 33.12 53.3333 32.4533C53.9467 31.7866 54.5867 31.1466 55.2267 30.56C55.84 30 56.4533 29.4133 57.04 28.8266L57.92 28.08C58.1584 27.8534 58.3477 27.5803 58.4762 27.2775C58.6046 26.9748 58.6694 26.6488 58.6667 26.32C58.6667 25.5733 58.4267 24.9066 57.92 24.3733C57.4133 23.84 56.8 23.5733 56 23.5733C55.2 23.5733 54.6667 23.8133 54.16 24.32M32 53.3333C33.84 53.3333 35.6267 53.0933 37.3333 52.5866V43.0666C37.3333 41.4933 36.8533 40.2666 35.76 39.0933C34.6667 37.92 33.4133 37.3333 32 37.3333C30.5867 37.3333 29.3333 37.8666 28.32 38.96C27.2533 40 26.6667 41.2266 26.6667 42.8266V52.5866C28.3733 53.0933 30.16 53.3333 32 53.3333ZM24 22.6666C24 24.88 22.2133 26.6666 20 26.6666C17.7867 26.6666 16 24.88 16 22.6666C16 20.4533 17.7867 18.6666 20 18.6666C22.2133 18.6666 24 20.4533 24 22.6666ZM48 22.6666C48 24.88 46.2133 26.6666 44 26.6666C41.7867 26.6666 40 24.88 40 22.6666C40 20.4533 41.7867 18.6666 44 18.6666C46.2133 18.6666 48 20.4533 48 22.6666ZM36 14.6666C36 16.88 34.2133 18.6666 32 18.6666C29.7867 18.6666 28 16.88 28 14.6666C28 12.4533 29.7867 10.6666 32 10.6666C34.2133 10.6666 36 12.4533 36 14.6666ZM36 29.3333C36 31.5466 34.2133 33.3333 32 33.3333C29.7867 33.3333 28 31.5466 28 29.3333C28 27.12 29.7867 25.3333 32 25.3333C34.2133 25.3333 36 27.12 36 29.3333Z"
+                                            fill="#ABABAB" />
+                                    </svg>
+
+                                    <p class="text">Your family members will show up here</p>
+                                </div>
+                                 
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Swiper -->
+            <div class="swiper mySwiper phase-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngIf="currentDiv=='personalDetailsDiv'">
+
+                        <div class="row position-relative">
+                            <div class="col-md-6 padd_left">
+                                <div class="ques-box">
+                                    <p class="question">1. Select your Gender</p>
+                                    <div class="gender">
+                                        <button [class.active]="activeGender === 'Male'" class="btn"
+                                            (click)="setActiveGender('Male')">Male</button>
+                                        <button [class.active]="activeGender === 'Female'" class="btn"
+                                            (click)="setActiveGender('Female')">Female</button>
+                                    </div>
+                                    <p class="opt_label">Who would you like to insure?</p>
+                                    <div class="users">
+                                        <ul class="user_li">
+                                            <li class="user">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Self"
+                                                        (click)="selectMember('self')" [checked]="isSelected('self')">
+                                                    <label class="form-check-label" for="Self">Self</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isSelected('self') && !selfmemberAge"
+                                                        (change)="setMemberAge('self', $event)"
+                                                        [(ngModel)]="selfmemberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of selfAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="user">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Spouse"
+                                                        (click)="selectMember('spouse')"
+                                                        [checked]="isSelected('spouse')">
+                                                    <label class="form-check-label" for="Spouse">Spouse</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isSelected('spouse') && !spousememberAge"
+                                                        (change)="setMemberAge('spouse', $event)"
+                                                        [(ngModel)]="spousememberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of spouseAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="user">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Father"
+                                                        (click)="selectMember('father')"
+                                                        [checked]="isSelected('father')">
+                                                    <label class="form-check-label" for="Father">Father</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isSelected('father') && !fathermemberAge"
+                                                        (change)="setMemberAge('father', $event)"
+                                                        [(ngModel)]="fathermemberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of fatherAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="user">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Mother"
+                                                        (click)="selectMember('mother')"
+                                                        [checked]="isSelected('mother')">
+                                                    <label class="form-check-label" for="Mother">Mother</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isSelected('mother') && !mothermemberAge"
+                                                        (change)="setMemberAge('mother', $event)"
+                                                        [(ngModel)]="mothermemberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of motherAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+
+                                            <!-- son -->
+                                            <li class="user">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Son"
+                                                        (click)="toggleChild('son')" [checked]="isSelected('son')"
+                                                        [disabled]="insureOptions['son'] > 1 || insureOptions['daughter'] == 3">
+                                                    <label class="form-check-label" for="Son">Son</label>
+                                                </div>
+                                                <div class="increase">
+                                                    <button class="btn minus"
+                                                        (click)="decrementChild('son', $event)">-</button>
+                                                    <span class="number">{{insureOptions.son || 0}}</span>
+                                                    <button class="btn" [disabled]="dissableChildSelection()"
+                                                        (click)="incrementChild('son', $event)">+</button>
+                                                </div>
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isSelected('son') && !s1memberAge"
+                                                        (change)="setMemberAge('son1', $event)"
+                                                        [(ngModel)]="s1memberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of sonAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="user" *ngIf="insureOptions['son'] > 1">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Son 2"
+                                                        (click)="disSelectMultipleChild('son2')"
+                                                        [checked]="isMultipleChild('son2')"
+                                                        [disabled]="insureOptions['son'] == 3">
+                                                    <label class="form-check-label" for="Son 2">Son 2</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isMultipleChild('son2') && !s2memberAge"
+                                                        (change)="setMemberAge('son2', $event)"
+                                                        [(ngModel)]="s2memberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of sonAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="user" *ngIf="insureOptions['son'] > 2">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Son 3"
+                                                        (click)="disSelectMultipleChild('son3')"
+                                                        [checked]="isMultipleChild('son3')">
+                                                    <label class="form-check-label" for="Son 3">Son 3</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isMultipleChild('son3') && !s3memberAge"
+                                                        (change)="setMemberAge('son3', $event)"
+                                                        [(ngModel)]="s3memberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of sonAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+
+
+                                            <!-- daughter -->
+                                            <li class="user">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Daughter"
+                                                        (click)="toggleChild('daughter')"
+                                                        [checked]="isSelected('daughter')"
+                                                        [disabled]="insureOptions['daughter'] > 1 || insureOptions['son'] == 3">
+                                                    <label class="form-check-label" for="Daughter">Daughter</label>
+                                                </div>
+                                                <div class="increase">
+                                                    <button class="btn minus"
+                                                        (click)="decrementChild('daughter', $event)">-</button>
+                                                    <span class="number">{{insureOptions.daughter || 0}}</span>
+                                                    <button class="btn" [disabled]="dissableChildSelection()"
+                                                        (click)="incrementChild('daughter', $event)">+</button>
+                                                </div>
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isSelected('daughter') && !d1memberAge"
+                                                        (change)="setMemberAge('daughter1', $event)"
+                                                        [(ngModel)]="d1memberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of daughterAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="user" *ngIf="insureOptions['daughter'] > 1">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Daughter 2"
+                                                        (click)="disSelectMultipleChild('daughter2')"
+                                                        [checked]="isMultipleChild('daughter2')"
+                                                        [disabled]="insureOptions['daughter'] == 3">
+                                                    <label class="form-check-label" for="Daughter 2">Daughter 2</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isMultipleChild('daughter2') && !d2memberAge"
+                                                        (change)="setMemberAge('daughter2', $event)"
+                                                        [(ngModel)]="d2memberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of daughterAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="user" *ngIf="insureOptions['daughter'] > 2">
+                                                <div class="form-group form-check mb-0">
+                                                    <input type="checkbox" class="form-check-input" id="Daughter 3"
+                                                        (click)="disSelectMultipleChild('daughter3')"
+                                                        [checked]="isMultipleChild('daughter3')">
+                                                    <label class="form-check-label" for="Daughter 3">Daughter 3</label>
+                                                </div>
+
+                                                <div class="form-group mb-0 custom_arr">
+                                                    <select class="form-control" id="exampleFormControlSelect1"
+                                                        [class.form-error]="isMultipleChild('daughter3') && !d3memberAge"
+                                                        (change)="setMemberAge('daughter3', $event)"
+                                                        [(ngModel)]="d3memberAge">
+                                                        <option value="" disabled>Select Age</option>
+                                                        <ng-container *ngFor="let age of daughterAgeDropDown">
+                                                            <option [value]="age">{{ age }}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <!-- daughter -->
+
+                                            <ng-container *ngIf="addMoreMembers">
+                                                <li class="user">
+                                                    <div class="form-group form-check mb-0">
+                                                        <input type="checkbox" class="form-check-input" id="fatherInLaw"
+                                                            (click)="selectMember('fatherInLaw')"
+                                                            [checked]="isSelected('fatherInLaw')">
+                                                        <label class="form-check-label"
+                                                            for="fatherInLaw">Father-In-Law</label>
+                                                    </div>
+
+                                                    <div class="form-group mb-0 custom_arr">
+                                                        <select class="form-control" id="exampleFormControlSelect1"
+                                                            [class.form-error]="isSelected('fatherInLaw') && !fatherILmemberAge"
+                                                            (change)="setMemberAge('fatherInLaw', $event)"
+                                                            [(ngModel)]="fatherILmemberAge">
+                                                            <option value="" disabled>Select Age</option>
+                                                            <ng-container *ngFor="let age of fatherInLawAgeDropDown">
+                                                                <option [value]="age">{{ age }}</option>
+                                                            </ng-container>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li class="user">
+                                                    <div class="form-group form-check mb-0">
+                                                        <input type="checkbox" class="form-check-input" id="motherInLaw"
+                                                            (click)="selectMember('motherInLaw')"
+                                                            [checked]="isSelected('motherInLaw')">
+                                                        <label class="form-check-label"
+                                                            for="motherInLaw">Mother-In-Law</label>
+                                                    </div>
+
+                                                    <div class="form-group mb-0 custom_arr">
+                                                        <select class="form-control" id="exampleFormControlSelect1"
+                                                            [class.form-error]="isSelected('motherInLaw') && !motherILmemberAge"
+                                                            (change)="setMemberAge('motherInLaw', $event)"
+                                                            [(ngModel)]="motherILmemberAge">
+                                                            <option value="" disabled>Select Age</option>
+                                                            <ng-container *ngFor="let age of motherInLawAgeDropDown">
+                                                                <option [value]="age">{{ age }}</option>
+                                                            </ng-container>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li class="user">
+                                                    <div class="form-group form-check mb-0">
+                                                        <input type="checkbox" class="form-check-input" id="grandFather"
+                                                            (click)="selectMember('grandFather')"
+                                                            [checked]="isSelected('grandFather')">
+                                                        <label class="form-check-label" for="grandFather">Grand
+                                                            Father</label>
+                                                    </div>
+
+                                                    <div class="form-group mb-0 custom_arr">
+                                                        <select class="form-control" id="exampleFormControlSelect1"
+                                                            [class.form-error]="isSelected('grandFather') && !grandFmemberAge"
+                                                            (change)="setMemberAge('grandFather', $event)"
+                                                            [(ngModel)]="grandFmemberAge">
+                                                            <option value="" disabled>Select Age</option>
+                                                            <ng-container
+                                                                *ngFor="let item of grandFatherAgeDropDown ; let index">
+                                                                <option [value]="item">{{item}}</option>
+                                                            </ng-container>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li class="user">
+                                                    <div class="form-group form-check mb-0">
+                                                        <input type="checkbox" class="form-check-input" id="grandMother"
+                                                            (click)="selectMember('grandMother')"
+                                                            [checked]="isSelected('grandMother')">
+                                                        <label class="form-check-label" for="grandMother">Grand
+                                                            Mother</label>
+                                                    </div>
+
+                                                    <div class="form-group mb-0 custom_arr">
+                                                        <select class="form-control" id="exampleFormControlSelect1"
+                                                            [class.form-error]="isSelected('grandMother') && !grandMmemberAge"
+                                                            (change)="setMemberAge('grandMother', $event)"
+                                                            [(ngModel)]="grandMmemberAge">
+                                                            <option value="" disabled>Select Age</option>
+                                                            <ng-container *ngFor="let x of grandMotherAgeDropDown">
+                                                                <option [value]="x">{{ x }}</option>
+                                                            </ng-container>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                            </ng-container>
+                                        </ul>
+                                    </div>
+
+                                    <div class="more-member" *ngIf="!addMoreMembers">
+                                        <button class="btn" (click)="addMoreMem()">+ Add more members</button>
+                                    </div>
+                                    <!-- //////////////////////////// -->
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 padd_right">
+                                <div class="right">
+                                    <div class="right_wrapper">
+                                        <div class="form">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">{{ selectedMembers[0] === 'self' ?
+                                                    'Enter your Name' : (selectedMembers[0] ? 'Enter your ' +
+                                                    formatRelationLabel(selectedMembers[0]) + '\'s Name' : 'Enter your
+                                                    Name') }}</label>
+                                                <input type="text" maxlength="70" class="form-control"
+                                                    placeholder="Eg: Rahul Sharma " (input)="handleInputChange()"
+                                                    (blur)="removeErrorMsg('name')" [(ngModel)]="name" appAlphaOnly>
+                                                <div class="text-danger" *ngIf="nameValidateMsg == 'lengthError'">
+                                                    Invalid full name
+                                                </div>
+                                                <div class="text-danger" *ngIf="nameValidateMsg == 'required'">
+                                                    {{ selectedMembers[0] === 'self' ?
+                                                    'Please enter your full name' :
+                                                    (selectedMembers[0] ? 'Please enter your ' +
+                                                    formatRelation(selectedMembers[0]) + '\'s full name' : 'Please enter
+                                                    your full name') }}
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="">Enter Pincode</label>
+                                                <input type="text" autocomplete="off" id="pincode" name="pincode"
+                                                    [(ngModel)]="pincode" class="form-control"
+                                                    placeholder="Your pincode" maxlength="6"
+                                                    (blur)="removeErrorMsg('pincode')" (keypress)="numbersOnly($event)"
+                                                    (keyup)="getPincodeList();pincodeChange()" (click)="openSuggestionBox($event)"
+                                                    (blur)="hideSuggestionDiv()" pattern="^[1-9][0-9]{5}$">
+                                                <div class="text-danger" *ngIf="pincodeValidateMsg == 'invalid'">
+                                                    Please enter a valid PIN code
+                                                </div>
+                                                <div class="text-danger" *ngIf="pincodeValidateMsg == 'required'">
+                                                    Pincode is mandatory
+                                                </div>
+                                                <div class="text-danger" *ngIf="pincodeValidateMsg == 'sameDigits'">
+                                                    Please enter a valid PIN code
+                                                </div>
+
+                                                <div class="suggestion-box" id="suggestion-box" *ngIf="hideSuggestion">
+                                                    <ng-container *ngFor="let pin of pincodeArr">
+                                                        <a class="pointer" (mousedown)="setpincode(pin)">
+                                                            <div style="padding:10px;" class="suggested">{{pin.pincode}}
+                                                                -
+                                                                {{pin.cityname}}</div>
+                                                        </a>
+                                                    </ng-container>
+                                                </div>
+                                            </div>
+
+                                            <div class="medical_input">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1" class="mb-0">Do you or anyone
+                                                        in your family have any health issues?</label>
+                                                    <div class="custom_arr custom_arr">
+                                                        <select class="form-control" id="exampleFormControlSelect1"
+                                                            [(ngModel)]="medicalHistory"
+                                                            (change)="changeMedicalHistory()">
+                                                            <option value="1">Yes</option>
+                                                            <option value="0">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="continue_btn">
+                                            <button [disabled]="dissableSubmit" class="btn" id="nextBTN"
+                                                (click)="nextButton()">Continue</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="ques-box">
+                            <p class="question">1. Select your Gender</p>
+                            <div class="gender">
+                                <button [class.active]="activeGender === 'Male'" (click)="setActiveGender('Male')"
+                                    class="btn active">Male</button>
+                                <button [class.active]="activeGender === 'Female'" (click)="setActiveGender('Female')"
+                                    class="btn active">Female</button>
+                            </div>
+                            <p class="opt_label">Who would you like to insure?</p>
+                            <div class="option-box">
+                                <button class="btn" [class.active]="isSelected('self')"
+                                    (click)="selectMember('self')">Self</button>
+                                <div class="btn son desktop" [class.active]="isSelected('son')"
+                                    (click)="toggleChild('son')">Son
+                                    <div class="calc">
+                                        <button class="btn minus" (click)="decrementChild('son', $event)">-</button>
+                                        <span class="number">{{insureOptions.son || 0}}</span>
+                                        <button class="btn" [disabled]="dissableChildSelection()"
+                                            (click)="incrementChild('son', $event)">+</button>
+                                    </div>
+                                </div>
+                                <button class="btn mobile" [class.active]="isSelected('spouse')"
+                                    (click)="selectMember('spouse')">Spouse</button>
+                                <button class="btn" [class.active]="isSelected('father')"
+                                    (click)="selectMember('father')">Father</button>
+                                <button class="btn desktop" [class.active]="isSelected('spouse')"
+                                    (click)="selectMember('spouse')">Spouse</button>
+                                <div class="btn son desktop" [class.active]="isSelected('daughter')"
+                                    (click)="toggleChild('daughter')">Daughter
+                                    <div class="calc">
+                                        <button class="btn minus"
+                                            (click)="decrementChild('daughter', $event)">-</button>
+                                        <span class="number">{{insureOptions.daughter || 0}}</span>
+                                        <button class="btn" [disabled]="dissableChildSelection()"
+                                            (click)="incrementChild('daughter', $event)">+</button>
+                                    </div>
+                                </div>
+                                <button class="btn" [class.active]="isSelected('mother')"
+                                    (click)="selectMember('mother')">Mother</button>
+
+                                <div class="btn son mobile" [class.active]="isSelected('son')"
+                                    (click)="toggleChild('son')">Son
+                                    <div class="calc">
+                                        <button class="btn minus" (click)="decrementChild('son', $event)">-</button>
+                                        <span class="number">{{insureOptions.son || 0}}</span>
+                                        <button class="btn" [disabled]="dissableChildSelection()"
+                                            (click)="incrementChild('son', $event)">+</button>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="btn son mobile" [class.active]="isSelected('daughter')"
+                                    (click)="toggleChild('daughter')">Daughter
+                                    <div class="calc">
+                                        <button class="btn minus"
+                                            (click)="decrementChild('daughter', $event)">-</button>
+                                        <span class="number">{{insureOptions.daughter || 0}}</span>
+                                        <button class="btn" [disabled]="dissableChildSelection()"
+                                            (click)="incrementChild('daughter', $event)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div *ngIf="addMoreMembers" class="option-box">
+                                <button class="btn" [class.active]="isSelected('brother')"
+                                    (click)="selectMember('brother')">Brother</button>
+                                <button class="btn" [class.active]="isSelected('sister')"
+                                    (click)="selectMember('sister')">Sister</button>
+                                <button class="btn" [class.active]="isSelected('grandFather')"
+                                    (click)="selectMember('grandFather')">Grand Father</button>
+                                <button class="btn" [class.active]="isSelected('grandMother')"
+                                    (click)="selectMember('grandMother')">Grand Mother</button>
+                                <button class="btn" [class.active]="isSelected('motherInLaw')"
+                                    (click)="selectMember('motherInLaw')">Mother-In-Law</button>
+                                <button class="btn" [class.active]="isSelected('fatherInLaw')"
+                                    (click)="selectMember('fatherInLaw')">Father-In-Law</button>
+                            </div>
+                            <div class="more-member" *ngIf="!addMoreMembers">
+                                <button class="btn" (click)="addMoreMem()">+ Add more members</button>
+                            </div>
+                            <div class="medical_input">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Do you or any member of your family
+                                        have a medical history beyond common colds or fevers?</label>
+                                    <div class="custom_arr custom_arr">
+                                        <select class="form-control" id="exampleFormControlSelect1"
+                                            [(ngModel)]="medicalHistory" (change)="changeMedicalHistory()">
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="swiper-slide" *ngIf="currentDiv=='familyIncomeDiv'">
+                        <div class="ques-box p-0 bg_none">
+
+
+                            <div class="row">
+                                <div class="col-md-6 padd_left">
+                                    <div class="left">
+                                        <p class="question">2. Family Income Range <span>(per annum)</span></p>
+                                        <div class="option-box2">
+                                            <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '5-10 lakhs'"
+                                                (click)="incomeRange('5-10 lakhs', 1)">5-10 lakhs</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '10-20 lakhs'"
+                                                (click)="incomeRange('10-20 lakhs', 2)">10-20 lakhs</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '20-40 lakhs'"
+                                                (click)="incomeRange('20-40 lakhs', 3)">20-40 lakhs</button>
+                                            <button class="btn rangeBtn"
+                                                [class.active]="annualIncomeRange == '40 lakhs and above'"
+                                                (click)="incomeRange('40 lakhs and above', 4)">40 lakhs and
+                                                above</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padd_right">
+                                    <div class="right layout-1">
+                                        <h4 class="heading">Why is Family Income required?</h4>
+                                        <p class="text">Understanding your annual income is the cornerstone of
+                                            crafting the perfect health insurance plan. It's not just about
+                                            numbers; it's about ensuring your coverage aligns perfectly with
+                                            your healthcare needs. From determining eligibility for subsidies to
+                                            selecting the right level of coverage, your annual income is the key
+                                            to unlocking a tailored, cost-effective health insurance solution.
+                                        </p>
+                                        <div class="tiger">
+                                            <img src="./assets/images/layout_1.png" class="img-fluid" alt="tiger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" *ngIf="currentDiv=='globalTreatDiv'">
+                        <div class="ques-box p-0 bg_none">
+
+
+
+                            <div class="row">
+                                <div class="col-md-6 padd_left">
+                                    <div class="left">
+                                        <p class="question">3. Would you like your plan to cover international treatment
+                                            costs?</p>
+                                        <div class="option-box2">
+                                            <button class="btn rangeBtn" [class.active]="globalTreatment===true"
+                                                (click)="globalTreat(true)">Yes</button>
+                                            <button class="btn rangeBtn" [class.active]="globalTreatment===false"
+                                                (click)="globalTreat(false)">No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padd_right">
+                                    <div class="right layout-1">
+                                        <h4 class="heading">What does "Global Treatment" mean?</h4>
+                                        <p class="text">It covers the cost of medical treatments within India as
+                                            well as abroad, providing the freedom to access quality medical care
+                                            outside India without worrying about arranging funds for expensive
+                                            bills.</p>
+                                        <div class="tiger">
+                                            <img src="./assets/images/layout_2.png" class="img-fluid pb-3" alt="tiger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" *ngIf="currentDiv=='babyPlanDiv'">
+                        <div class="ques-box p-0 bg_none">
+
+
+                            <div class="row">
+                                <div class="col-md-6 padd_left">
+                                    <div class="left">
+                                        <p class="question">4. Are you planning for a baby in near future? (between 9 ~
+                                            24 months)
+                                        </p>
+                                        <div class="option-box2">
+                                            <button class="btn rangeBtn" [class.active]="planBaby===true"
+                                                (click)="babyPlanFuture(true)">Yes</button>
+                                            <button class="btn rangeBtn" [class.active]="planBaby===false"
+                                                (click)="babyPlanFuture(false)">No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padd_right">
+                                    <div class="right layout-1">
+                                        <h4 class="heading">What is Maternity cover?</h4>
+                                        <p class="text">Maternity coverage, often known as a maternity health
+                                            insurance policy, is specifically designed for women's health needs.
+                                            Typically offered as a rider to standard health insurance and
+                                            mediclaim policies, it covers childbirth expenses. This includes
+                                            prenatal care, delivery costs (normal/cesarean), and
+                                            pregnancy-related complications. Some insurers also cover pre- and
+                                            post-natal expenses. However, it's important to note that these
+                                            policies usually don't cover pre-existing diseases affecting
+                                            pregnancy, congenital diseases, or infertility treatment expenses.
+                                        </p>
+                                        <div class="tiger">
+                                            <img src="./assets/images/layout_3.png" class="img-fluid pb-3" alt="tiger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" *ngIf="currentDiv=='tigerImg'">
+                        <div class="ques-box tigerimg" id="tigerimg">
+                            <img src="./assets/images/tiger2.webp" class="img-fluid" alt="tiger">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="next_btn">
+                <button class="btn" id="nextBTN" (click)="nextButton()">Continue</button>
+            </div> -->
+        </div>
+    </div>
+    <span class="error" [ngClass]="{'active': ErrorshowAge}"
+        *ngIf="ErrorshowAge && ( ageValidateMessage == 'child-parentComparison' || ageValidateMessage=='self-childComparison' || ageValidateMessage=='spouse-childComparison'|| ageValidateMessage=='self-fmComparison' || ageValidateMessage=='spouse-inlawComparison' || ageValidateMessage=='otherAdult-fmComparison' || ageValidateMessage=='fm-selfComparison' || ageValidateMessage=='fm-otherAdultComparison' || ageValidateMessage=='fm-grandComparison' || ageValidateMessage=='inLaw-spouseComparison' ||  ageValidateMessage=='grand-fmComparison')">
+        <p class="text">Minimum age gap between {{formatRelation(member1forValidation)}} and
+        {{formatRelation(member2forValidation)}} should be 18 years</p>
+    </span>
+
+    <span class="error" [ngClass]="{'active': ErrorshowAge}"
+        *ngIf="ErrorshowAge && ( ageValidateMessage == 'self-grandComparison' || ageValidateMessage =='otherAdult-grandComparison' || ageValidateMessage =='grand-selfComparison' || ageValidateMessage =='grand-otherAdultComparison')">
+    <p class="text">Minimum age gap between {{formatRelation(member1forValidation)}} and
+        {{formatRelation(member2forValidation)}} should be 36 years</p>
+    </span>
+
+    <span class="error" *ngIf="Errorshow" [ngClass]="{'active': Errorshow}">
+        <p class="text">{{continueErrorMsg}}</p>
+    </span>
+</section>
