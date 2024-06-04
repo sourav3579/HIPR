@@ -19,6 +19,7 @@ import { ReporthtmlComponent } from './reporthtml/reporthtml.component';
 import { NameFormatterPipe } from './pipe/name-formatter.pipe';
 import { TestparentComponent } from './testparent/testparent.component';
 import { AlphaOnlyDirective } from './alpha-only.directive';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AlphaOnlyDirective } from './alpha-only.directive';
     ReporthtmlComponent,
     NameFormatterPipe,
     TestparentComponent,
-    AlphaOnlyDirective
+    AlphaOnlyDirective,
+    TestComponent
   ],
   imports: [
     BrowserModule,
