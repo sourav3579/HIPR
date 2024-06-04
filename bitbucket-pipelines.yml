@@ -24,3 +24,21 @@ pipelines:
                 S3_BUCKET: $AWS_BUCKET_TARGET
                 APPLICATION_NAME: $APPLICATION_NAME
                 ZIP_FILE: 'hiso.zip'
+      - step:
+          name: Deploy with CodeDeploy
+          services:
+            - docker
+          script:
+          # Test upload
+            - pipe: atlassian/aws-code-deploy:0.2.3
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: $AWS_REGION
+                COMMAND: 'deploy'
+                S3_BUCKET: $AWS_BUCKET_TARGET
+                APPLICATION_NAME: $APPLICATION_NAME
+                DEPLOYMENT_GROUP: $DEPLOYMENT_GROUP
+                IGNORE_APPLICATION_STOP_FAILURES: 'true'
+                FILE_EXISTS_BEHAVIOR: 'OVERWRITE'
+                WAIT: 'true'
