@@ -1,0 +1,72 @@
+# image: atlassian/default-image:2.13
+
+# pipelines:
+#   branches:
+#     main:
+#       - step:
+#           name: Production Build
+#           deployment: main
+#           script:
+#             - zip -r hiso.zip *
+#           artifacts:
+#             - hiso.zip
+      # - step:
+      #     name: Upload to S3
+      #     services:
+      #       - docker
+      #     script:
+      #       - pipe: atlassian/aws-code-deploy:0.2.3
+      #         variables:
+      #           AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      #           AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+      #           AWS_DEFAULT_REGION: $AWS_REGION
+      #           COMMAND: 'upload'
+      #           S3_BUCKET: $AWS_BUCKET_TARGET
+      #           APPLICATION_NAME: $APPLICATION_NAME
+      #           ZIP_FILE: 'hiso.zip'
+      # - step:
+      #     name: Deploy with CodeDeploy
+      #     services:
+      #       - docker
+      #     script:
+      #     # Test upload
+      #       - pipe: atlassian/aws-code-deploy:0.2.3
+      #         variables:
+      #           AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      #           AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+      #           AWS_DEFAULT_REGION: $AWS_REGION
+      #           COMMAND: 'deploy'
+      #           S3_BUCKET: $AWS_BUCKET_TARGET
+      #           APPLICATION_NAME: $APPLICATION_NAME
+      #           DEPLOYMENT_GROUP: $DEPLOYMENT_GROUP
+      #           IGNORE_APPLICATION_STOP_FAILURES: 'true'
+      #           FILE_EXISTS_BEHAVIOR: 'OVERWRITE'
+      #           WAIT: 'true'
+      #           DEBUG: 'true'
+
+name: Production Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # You can choose a different runner OS if needed
+
+    steps:
+      - uses: actions/checkout@v3  # Checks out your code from the repository
+
+      - name: Install dependencies (if any)
+        run: |
+          npm install
+
+      - name: Build for Production
+        run: |
+          zip -r hiso.zip *  # Compress all files into hiso.zip
+
+      - name: Upload Production Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: production-build
+          path: hiso.zip
